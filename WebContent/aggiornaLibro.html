@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Aggiorna Libro</title>
+</head>
+<body>
+	<h1>Aggiorna un libro</h1>
+	<form action="LibriCtr" method="get">
+		<label>Id Libro</label><input type="text" name="idLibro" id="1" required/><br>
+		<label>Anno di Stampa</label><input type="date" name="annoDiStampa" id="2" required><br>
+		<label>Numero Pagine</label><input type="text" name="numeroPagine" id="3" required/><br>
+		<label>Titolo</label><input type="text" name="titolo" id="4" required/><br>
+		<label>Genere</label><input type="text" name="genere" id="5" required/><br>
+		<label>Autore</label><input type="text" name="autore" id="6" required/><br>
+		<label>ISBN</label><input type="text" name="ISBN" id="7" required/><br>
+		<label>Casa Editrice</label><input type="text" name="casaEditrice" id="8" required/><br>
+		<label>Posizione</label><input type="text" name="posizione" id="9" required/><br>
+		<input type="hidden" name="tipoOperazione" value="aggiornaLibri">
+		<button type="submit" class="inserisci" value="Aggiorna Libro!">Aggiorna Libro!</button>
+	</form>
+	<br>
+	<a href=/biblioteca>Torna alla homepage</a>
+<script type="text/javascript">function getUrlParams() {
+
+	  var paramMap = {};
+	  if (location.search.length == 0) {
+	    return paramMap;
+	  }
+	  var parts = location.search.substring(1).split("&");
+
+	  for (var i = 0; i < parts.length; i ++) {
+	    var component = parts[i].split("=");
+	    paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+	  }
+	  return paramMap;
+	}
+var params = getUrlParams();
+document.getElementById('1').value = params.idLibro.replace("/","");
+document.getElementById('2').value = params.annoDiStampa;
+document.getElementById('3').value = params.numeroPagine;
+document.getElementById('4').value = params.titolo;
+document.getElementById('5').value = params.genere;
+document.getElementById('6').value = params.autore;
+document.getElementById('7').value = params.ISBN;
+document.getElementById('8').value = params.casaEditrice;
+document.getElementById('9').value = params.posizione;
+</script>
+</body>
+</html>

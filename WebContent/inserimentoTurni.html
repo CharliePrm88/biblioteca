@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Inserisci Turno</title>
+</head>
+<body>
+	<h1>Inserisci un turno di un dipendente</h1>
+	<form action="TurniCtr" method="get">
+		<label>Id Turno</label><input type="text" name="idturno" required/><br>
+		<label>Matricola</label><input type="text" name="matricola"required/><br>		
+		<label>Inizio Turno</label><input type="date" name="data_inizio" required><br>
+		<label>Fine Turno</label><input type="date" name="data_fine" required><br>
+		
+		<input type="hidden" name="tipoOperazione" value="inserisciRegistro">
+		<button type="submit" class="inserisci" value="Inserisci Turno!">Inserisci Turno!</button>
+	</form><br>
+	<a href=/biblioteca>Torna alla homepage</a>
+</body>
+</html>

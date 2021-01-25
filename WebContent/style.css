@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+
+h1{
+    text-align: center;
+}
+a{color:white;
+}
+a:hover{color:yellow;}
+
+a:visited{color:white;}
+a:active{color:green;} 
+body{
+    text-align:center;
+    background-color: black;
+    color: white;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+button.inserisci{
+    background-color:greenyellow;
+    color:black;
+    text-align: center;
+    border:none;
+}
+
+button.inserisci:hover{
+    background-color:green;
+    color:white;
+    text-align: center;
+    border:whitesmoke;
+}
+
+button.rimuovi{
+    background-color:lightcoral;
+    text-align: center;
+    border: none;
+}
+button.rimuovi:hover{
+    background-color:red;
+    text-align: center;
+    border:white;
+    color:white;
+}
+
+input{width: 100px;
+display: inline-block;}
+label { width: 100px;
+display: inline-block; }
