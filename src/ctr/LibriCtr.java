@@ -49,7 +49,7 @@ public class LibriCtr extends HttpServlet {
 				e.printStackTrace();
 			}
 			Date d1 = new Date(date1.getTime());
-			Libri c= new Libri(Integer.parseInt(request.getParameter("idLibro")),d1,Integer.parseInt(request.getParameter("numeroPagine")),request.getParameter("titolo"),request.getParameter("genere"),request.getParameter("autore"),request.getParameter("ISBN"),request.getParameter("casaEditrice"),request.getParameter("posizione"));
+			Libri c= new Libri(d1,Integer.parseInt(request.getParameter("numeroPagine")),request.getParameter("titolo"),request.getParameter("genere"),request.getParameter("autore"),request.getParameter("ISBN"),request.getParameter("casaEditrice"),request.getParameter("posizione"));
 			inserisciLibri(c);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);
 			break;

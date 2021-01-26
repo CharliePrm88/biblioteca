@@ -34,7 +34,7 @@ public class DipendenteCtr extends HttpServlet {
 		String s = request.getParameter("tipoOperazione");
 		switch(s) {
 		case "inserisciDipendente":
-			Dipendenti c= new Dipendenti(Integer.parseInt(request.getParameter("matricola")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
+			Dipendenti c= new Dipendenti(request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
 			inserisciDipendente(c);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);
 			break;

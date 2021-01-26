@@ -1,20 +1,10 @@
 @charset "ISO-8859-1";
 
-h1{
-    text-align: center;
-}
-a{color:white;
-}
-a:hover{color:yellow;}
-
-a:visited{color:white;}
-a:active{color:green;} 
 body{
     text-align:center;
     background-color: black;
     color: white;
     box-shadow: 10px 10 px 10px 10px grey;
-    
 }
 table{
     margin-left: auto;
@@ -46,7 +36,26 @@ button.rimuovi:hover{
     color:white;
 }
 
-input{width: 100px;
-display: inline-block;}
-label { width: 100px;
-display: inline-block; }
+input{width: 150px;
+display: inline-block;
+margin:10px;
+}
+
+label { width: 120px;
+margin:10px;
+display: inline-block; 
+}
+input[type="text"]:read-only {
+    cursor: not-allowed;
+    background-color: #f8f8f8;
+    color: black;
+}
+h1{
+    text-align: center;
+}
+a{color:white;
+}
+a:hover{color:yellow;}
+
+a:visited{color:white;}
+a:active{color:green;} 

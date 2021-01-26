@@ -20,15 +20,14 @@ public class RegistroLibriDao {
 			String url = "jdbc:mysql://localhost:3306/biblioteca?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			// Otteniamo una connessione con username e password
 			dbConnection = DriverManager.getConnection(url, "root", "CharliePrm88");
-			String updateTableSQL = "INSERT INTO registrolibri(id, idlibro, matricola,idcliente,data_prestito, data_scadenza,data_rientro) VALUES(?,?,?,?,?,?,?)";
+			String updateTableSQL = "INSERT INTO registrolibri(idlibro, matricola,idcliente,data_prestito, data_scadenza,data_rientro) VALUES(?,?,?,?,?,?)";
 			cmd = dbConnection.prepareStatement(updateTableSQL);
-			cmd.setInt(1, tur.getId());
-			cmd.setInt(2, tur.getIdlibro());
-			cmd.setInt(3, tur.getMatricola());
-			cmd.setInt(4, tur.getIdcliente());
-			cmd.setDate(5, tur.getData_prestito());
-			cmd.setDate(6, tur.getData_scadenza());
-			cmd.setDate(7, tur.getData_rientro());
+			cmd.setInt(1, tur.getIdlibro());
+			cmd.setInt(2, tur.getMatricola());
+			cmd.setInt(3, tur.getIdcliente());
+			cmd.setDate(4, tur.getData_prestito());
+			cmd.setDate(5, tur.getData_scadenza());
+			cmd.setDate(6, tur.getData_rientro());
 			// execute update SQL stetement
 			cmd.executeUpdate();
 			System.out.println("Record is updated to DBUSER table!");

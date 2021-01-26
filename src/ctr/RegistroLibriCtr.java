@@ -51,7 +51,7 @@ public class RegistroLibriCtr extends HttpServlet {
 			java.sql.Date d1 = new Date(data_prestito.getTime());
 			java.sql.Date d2 = new Date(data_scadenza.getTime());
 			java.sql.Date d3 = new Date(data_rientro.getTime());
-			RegistroLibri c= new RegistroLibri(Integer.parseInt(request.getParameter("id")),Integer.parseInt(request.getParameter("idLibro")),Integer.parseInt(request.getParameter("idCliente")),Integer.parseInt(request.getParameter("matricola")),d1,d2,d3);
+			RegistroLibri c= new RegistroLibri(Integer.parseInt(request.getParameter("idLibro")),Integer.parseInt(request.getParameter("idCliente")),Integer.parseInt(request.getParameter("matricola")),d1,d2,d3);
 			inserisciregendente(c);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);
 			break;

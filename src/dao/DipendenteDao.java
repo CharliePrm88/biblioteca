@@ -23,12 +23,11 @@ public class DipendenteDao {
 			String url = "jdbc:mysql://localhost:3306/biblioteca?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			// Otteniamo una connessione con username e password
 			dbConnection = DriverManager.getConnection(url, "root", "CharliePrm88");
-			String updateTableSQL = "INSERT INTO dipendenti(nome, cognome,matricola,codiceFiscale) VALUES(?,?,?,?)";
+			String updateTableSQL = "INSERT INTO dipendenti(nome, cognome,codiceFiscale) VALUES(?,?,?)";
 			cmd = dbConnection.prepareStatement(updateTableSQL);
 			cmd.setString(1, dip.getNome());
 			cmd.setString(2, dip.getCognome());
-			cmd.setInt(3, dip.getMatricola());
-			cmd.setString(4, dip.getCodiceFiscale());
+			cmd.setString(3, dip.getCodiceFiscale());
 			// execute update SQL stetement
 			cmd.executeUpdate();
 			System.out.println("Record is updated to DBUSER table!");

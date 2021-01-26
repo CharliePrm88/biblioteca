@@ -20,17 +20,16 @@ public class LibriDao {
 			String url = "jdbc:mysql://localhost:3306/biblioteca?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			// Otteniamo una connessione con username e password
 			dbConnection = DriverManager.getConnection(url, "root", "CharliePrm88");
-			String updateTableSQL = "INSERT INTO libri(idlibro, annoDiStampa,numeroPagine,titolo,genere,autore,isbn,casaeditrice,posizione) VALUES(?,?,?,?,?,?,?,?,?)";
+			String updateTableSQL = "INSERT INTO libri(annoDiStampa,numeroPagine,titolo,genere,autore,isbn,casaeditrice,posizione) VALUES(?,?,?,?,?,?,?,?)";
 			cmd = dbConnection.prepareStatement(updateTableSQL);
-			cmd.setInt(1, lib.getIdlibro());
-			cmd.setDate(2, lib.getAnnoDiStampa());
-			cmd.setInt(3, lib.getNumeroPagine());
-			cmd.setString(4, lib.getTitolo());
-			cmd.setString(5, lib.getGenere());
-			cmd.setString(6, lib.getAutore());
-			cmd.setString(7, lib.getISBN());
-			cmd.setString(8, lib.getCasaEditrice());
-			cmd.setString(9, lib.getPosizione());
+			cmd.setDate(1, lib.getAnnoDiStampa());
+			cmd.setInt(2, lib.getNumeroPagine());
+			cmd.setString(3, lib.getTitolo());
+			cmd.setString(4, lib.getGenere());
+			cmd.setString(5, lib.getAutore());
+			cmd.setString(6, lib.getISBN());
+			cmd.setString(7, lib.getCasaEditrice());
+			cmd.setString(8, lib.getPosizione());
 			// execute update SQL statement
 			cmd.executeUpdate();
 			System.out.println("Record is updated to DBUSER table!");

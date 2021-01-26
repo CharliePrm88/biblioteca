@@ -20,12 +20,11 @@ public class ClientiDao {
 			String url = "jdbc:mysql://localhost:3306/biblioteca?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			// Otteniamo una connessione con username e password
 			dbConnection = DriverManager.getConnection(url, "root", "CharliePrm88");
-			String updateTableSQL = "INSERT INTO clienti(nome, cognome,idCliente,codiceFiscale) VALUES(?,?,?,?)";
+			String updateTableSQL = "INSERT INTO clienti(nome, cognome,codiceFiscale) VALUES(?,?,?)";
 			cmd = dbConnection.prepareStatement(updateTableSQL);
 			cmd.setString(1, c.getNome());
 			cmd.setString(2, c.getCognome());
-			cmd.setInt(3, c.getIdCliente());
-			cmd.setString(4, c.getCodiceFiscale());
+			cmd.setString(3, c.getCodiceFiscale());
 			// execute update SQL stetement
 			cmd.executeUpdate();
 			System.out.println("Record is updated to DBUSER table!");

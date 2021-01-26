@@ -18,6 +18,18 @@ public class Libri {
 		this.casaEditrice = casaEditrice;
 		this.posizione = posizione;
 	}
+	
+	public Libri(Date annoDiStampa, int numeroPagine, String titolo, String genere, String autore,
+			String ISBN, String casaEditrice, String posizione) {
+		this.annoDiStampa = annoDiStampa;
+		this.numeroPagine = numeroPagine;
+		this.titolo = titolo;
+		this.genere = genere;
+		this.autore = autore;
+		this.ISBN = ISBN;
+		this.casaEditrice = casaEditrice;
+		this.posizione = posizione;
+	}
 
 	public int getIdlibro() {
 		return idlibro;

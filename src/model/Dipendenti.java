@@ -42,4 +42,9 @@ public class Dipendenti {
 		this.cognome = cognome;
 		this.codiceFiscale = codiceFiscale;
 	}
+	public Dipendenti(String nome, String cognome, String codiceFiscale) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.codiceFiscale = codiceFiscale;
+	}
 }

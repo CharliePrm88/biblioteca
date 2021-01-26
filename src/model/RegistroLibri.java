@@ -71,4 +71,14 @@ public class RegistroLibri {
 		this.data_scadenza = data_scadenza;
 		this.data_rientro = data_rientro;
 	}
+	
+	public RegistroLibri(int idlibro, int idcliente, int matricola, Date data_prestito, Date data_scadenza,
+			Date data_rientro) {
+		this.idlibro = idlibro;
+		this.idcliente = idcliente;
+		this.matricola = matricola;
+		this.data_prestito = data_prestito;
+		this.data_scadenza = data_scadenza;
+		this.data_rientro = data_rientro;
+	}
 }

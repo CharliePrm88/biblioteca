@@ -50,7 +50,7 @@ public class TurniCtr extends HttpServlet {
 			}
 			java.sql.Date d1 = new Date(data_inizio.getTime());
 			java.sql.Date d2 = new Date(data_fine.getTime());
-			Turni c= new Turni(Integer.parseInt(request.getParameter("idturno")),Integer.parseInt(request.getParameter("matricola")),d1,d2);
+			Turni c= new Turni(Integer.parseInt(request.getParameter("matricola")),d1,d2);
 			inserisciTurni(c);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);
 			break;

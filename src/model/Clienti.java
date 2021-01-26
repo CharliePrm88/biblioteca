@@ -42,4 +42,9 @@ public class Clienti {
 		this.cognome = cognome;
 		this.codiceFiscale = codiceFiscale;
 	}
+	public Clienti(String nome, String cognome, String codiceFiscale) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.codiceFiscale = codiceFiscale;
+	}
 }

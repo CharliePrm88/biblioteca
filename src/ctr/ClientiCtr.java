@@ -35,7 +35,7 @@ public class ClientiCtr extends HttpServlet {
 		String s = request.getParameter("tipoOperazione");
 		switch(s) {
 		case "inserisciCliente":
-			Clienti c= new Clienti(Integer.parseInt(request.getParameter("idCliente")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
+			Clienti c= new Clienti(request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
 			inserisciCliente(c);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);			break;
 		case "ritornaListaClienti":

@@ -44,5 +44,10 @@ public class Turni {
 		this.data_inizio_turno = data_inizio_turno;
 		this.data_fine_turno = data_fine_turno;
 	}
+	public Turni(int matricola, Date data_inizio_turno, Date data_fine_turno) {
+		this.matricola = matricola;
+		this.data_inizio_turno = data_inizio_turno;
+		this.data_fine_turno = data_fine_turno;
+	}
 
 }
