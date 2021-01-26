@@ -20,6 +20,7 @@
         <td><%=c.getData_scadenza() %></td>
          <td><%=c.getData_rientro()%> </td>
         </tr>
-</table>
+</table><br>
+	<a href=/biblioteca>Torna alla homepage</a>
 </body>
 </html>

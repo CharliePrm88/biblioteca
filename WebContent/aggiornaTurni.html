@@ -13,8 +13,8 @@
 		<label>Inizio Turno</label><input type="date" name="data_inizio" id="3" required><br>
 		<label>Fine Turno</label><input type="date" name="data_fine" id="4" required><br>
 		
-		<input type="hidden" name="tipoOperazione" value="aggiornaRegistro">
-		<button type="submit" class="inserisci" value="Aggiorna Turno!">Aggiorna Turno!</button>
+		<input type="hidden" name="tipoOperazione" value="aggiornaTurni">
+		<button type="submit" class="inserisci">Aggiorna Turno!</button>
 	</form><br>
 	<a href=/biblioteca>Torna alla homepage</a>
 <script type="text/javascript">function getUrlParams() {
@@ -32,10 +32,10 @@
 	  return paramMap;
 	}
 var params = getUrlParams();
-document.getElementById('1').value = params.id.replace("/","");
+document.getElementById('1').value = params.idturno.replace("/","");
 document.getElementById('2').value = params.matricola;
-document.getElementById('3').value = params.data_inizio_turno;
-document.getElementById('4').value = params.data_fine_turno;
+document.getElementById('3').value = params.data_inizio;
+document.getElementById('4').value = params.data_fine;
 </script>
 </body>
 </html>

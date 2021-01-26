@@ -86,6 +86,8 @@ public class LibriCtr extends HttpServlet {
 			List<Libri>l3=ritornaListaLibri();
 			request.setAttribute("ListaLibri", l3);
 			request.getRequestDispatcher("/ListaTuttiLibri.jsp").forward(request, response);break;
+		case "":
+			break;
 		default:
 			response.getWriter().append("Comando Non Trovato!");
 		}

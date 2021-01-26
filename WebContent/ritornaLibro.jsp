@@ -22,6 +22,7 @@
         <td> <%=c.getCasaEditrice()%></td>
         <td> <%=c.getPosizione()%></td>
         </tr>
-</table>
+</table><br>
+	<a href=/biblioteca>Torna alla homepage</a>
 </body>
 </html>

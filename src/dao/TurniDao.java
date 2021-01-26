@@ -151,11 +151,12 @@ public class TurniDao {
 			String url = "jdbc:mysql://localhost:3306/biblioteca?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			// Otteniamo una connessione con username e password
 			dbConnection = DriverManager.getConnection(url, "root", "CharliePrm88");
-			String updateTableSQL = "UPDATE turni SET data_inizio_turno=?,data_fine_turno=? WHERE matricola=?";
+			String updateTableSQL = "UPDATE turni SET matricola=?,data_inizio_turno=?,data_fine_turno=? WHERE id=?";
 			cmd = dbConnection.prepareStatement(updateTableSQL);
-			cmd.setInt(3, tur.getMatricola());
-			cmd.setDate(1, tur.getData_inizio_turno());
-			cmd.setDate(2, tur.getData_fine_turno());
+			cmd.setInt(1, tur.getMatricola());
+			cmd.setDate(2, tur.getData_inizio_turno());
+			cmd.setDate(3, tur.getData_fine_turno());
+			cmd.setInt(4, tur.getId());
 			// execute update SQL stetement
 			cmd.executeUpdate();
 			System.out.println("Record is updated to DBUSER table!");

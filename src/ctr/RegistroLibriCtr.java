@@ -82,7 +82,7 @@ public class RegistroLibriCtr extends HttpServlet {
 			java.sql.Date d11 = new Date(data_prestito1.getTime());
 			java.sql.Date d22 = new Date(data_scadenza1.getTime());
 			java.sql.Date d33 = new Date(data_rientro1.getTime());
-			RegistroLibri i= new RegistroLibri(Integer.parseInt(request.getParameter("id")),Integer.parseInt(request.getParameter("idLibro")),Integer.parseInt(request.getParameter("idcliente")),Integer.parseInt(request.getParameter("matricola")),d11,d22,d33);
+			RegistroLibri i= new RegistroLibri(Integer.parseInt(request.getParameter("id")),Integer.parseInt(request.getParameter("idLibro")),Integer.parseInt(request.getParameter("idCliente")),Integer.parseInt(request.getParameter("matricola")),d11,d22,d33);
 			aggiornaRegistroLibri(i);
 			List<RegistroLibri>l2=ritornaListaRegistroLibri();
 			request.setAttribute("ListaRegistroLibri", l2);
@@ -94,6 +94,8 @@ public class RegistroLibriCtr extends HttpServlet {
 			List<RegistroLibri>l3=ritornaListaRegistroLibri();
 			request.setAttribute("ListaRegistroLibri", l3);
 			request.getRequestDispatcher("/ListaTuttiRegistri.jsp").forward(request, response);
+			break;
+		case "":
 			break;
 		default:
 			response.getWriter().append("Comando Non Trovato!");

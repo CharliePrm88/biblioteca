@@ -18,6 +18,7 @@
         <td><%=c.getData_inizio_turno() %></td>
         <td><%=c.getData_fine_turno() %></td>
         </tr>
-</table>
+</table><br>
+	<a href=/biblioteca>Torna alla homepage</a>
 </body>
 </html>

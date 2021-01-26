@@ -16,12 +16,12 @@
 <table>
 <c:forEach var="c" items="${ListaDipendenti}">
 <tr>
-	<td><form action="DipendentiCtr">
+	<td><form action="DipendenteCtr">
 	<input type="text" name="matricola" value=${c.getMatricola()} readonly/>
 	<input type="text" name="nome" value=${c.getNome()} readonly/>
 	<input type="text" name="cognome" value=${c.getCognome()} readonly/>
 	<input type="text" name="codiceFiscale"value=${c.getCodiceFiscale()} readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaClienti">
+	<input type="hidden" name="tipoOperazione" value="cancellaDipendenti">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
@@ -35,6 +35,7 @@
 	</td>
 </tr>
 </c:forEach>
-</table>
+</table><br>
+	<a href=/biblioteca>Torna alla homepage</a>
 </body>
 </html>

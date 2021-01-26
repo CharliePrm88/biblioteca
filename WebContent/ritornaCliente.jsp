@@ -18,6 +18,7 @@
         <td> <%=c.getCognome()%></td>
         <td> <%=c.getCodiceFiscale() %></td>
         </tr> 
-</table>
+</table><br>
+	<a href=/biblioteca>Torna alla homepage</a>
 </body>
 </html>

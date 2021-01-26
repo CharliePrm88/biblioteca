@@ -24,7 +24,7 @@
 	<input type="text" name="data_prestito" value=${c.getData_prestito()} readonly/>
 	<input type="text" name="data_scadenza" value=${c.getData_scadenza()} readonly/>
 	<input type="text" name="data_rientro" value=${c.getData_rientro()} readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaClienti">
+	<input type="hidden" name="tipoOperazione" value="cancellaRegistroLibri">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
@@ -41,6 +41,7 @@
 	</td>
 </tr>
 </c:forEach>
-</table>
+</table><br>
+	<a href=/biblioteca>Torna alla homepage</a>
 </body>
 </html>

@@ -34,7 +34,7 @@ public class DipendenteCtr extends HttpServlet {
 		String s = request.getParameter("tipoOperazione");
 		switch(s) {
 		case "inserisciDipendente":
-			Dipendenti c= new Dipendenti(Integer.parseInt(request.getParameter("idDipendente")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
+			Dipendenti c= new Dipendenti(Integer.parseInt(request.getParameter("matricola")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
 			inserisciDipendente(c);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);
 			break;
@@ -50,18 +50,20 @@ public class DipendenteCtr extends HttpServlet {
 			request.getRequestDispatcher("/ritornaDipendente.jsp").forward(request, response);
 			break;
 		case "aggiornaDipendenti":
-			Dipendenti i= new Dipendenti(Integer.parseInt(request.getParameter("idDipendente")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
+			Dipendenti i= new Dipendenti(Integer.parseInt(request.getParameter("matricola")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
 			aggiornaDipendenti(i);
 			List<Dipendenti> l2 = ritornaListaDipendenti();
 			request.setAttribute("ListaDipendenti", l2);
 			request.getRequestDispatcher("/ListaTuttiDipendenti.jsp").forward(request, response);
 			break;
 		case "cancellaDipendenti":
-			Dipendenti j= new Dipendenti(Integer.parseInt(request.getParameter("idDipendente")),null,null,null);
+			Dipendenti j= new Dipendenti(Integer.parseInt(request.getParameter("matricola")),null,null,null);
 			cancellaDipendenti(j);
 			List<Dipendenti> l3 = ritornaListaDipendenti();
 			request.setAttribute("ListaDipendenti", l3);
 			request.getRequestDispatcher("/ListaTuttiDipendenti.jsp").forward(request, response);
+			break;
+		case "":
 			break;
 		default:
 			response.getWriter().append("Comando Non Trovato!");

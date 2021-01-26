@@ -45,6 +45,7 @@
 	</td>
 </tr>
 </c:forEach>
-</table>
+</table><br>
+	<a href=/biblioteca>Torna alla homepage</a>
 </body>
 </html>

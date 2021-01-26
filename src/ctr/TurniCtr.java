@@ -36,7 +36,7 @@ public class TurniCtr extends HttpServlet {
 		// TODO Auto-generated method stub
 		String s = request.getParameter("tipoOperazione");
 		switch(s) {
-		case "inserisciRegistro":
+		case "inserisciTurni":
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			java.util.Date data_inizio = null;
 			java.util.Date data_fine= null;
@@ -66,7 +66,7 @@ public class TurniCtr extends HttpServlet {
 			request.getRequestDispatcher("/ritornaTurno.jsp").forward(request, response);
 			break;
 		case "aggiornaTurni":
-			SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
 			java.util.Date data_inizio1 = null;
 			java.util.Date data_fine1 = null;
 			try {
@@ -91,6 +91,8 @@ public class TurniCtr extends HttpServlet {
 			List<Turni>l3=ritornaListaTurni();
 			request.setAttribute("ListaTurni", l3);
 			request.getRequestDispatcher("/ListaTuttiTurni.jsp").forward(request, response);
+			break;
+		case "":
 			break;
 		default:
 			response.getWriter().append("Comando Non Trovato!");
