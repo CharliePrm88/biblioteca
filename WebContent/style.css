@@ -38,14 +38,15 @@ button.rimuovi:hover{
 
 input{width: 150px;
 display: inline-block;
-margin:10px;
+margin:3px;
 }
 
 label { width: 120px;
-margin:10px;
+margin:3px;
 display: inline-block; 
 }
 input[type="text"]:read-only {
+	width: 100px;
     cursor: not-allowed;
     background-color: #f8f8f8;
     color: black;

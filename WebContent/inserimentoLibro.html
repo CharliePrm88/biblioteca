@@ -10,7 +10,7 @@
 	<form action="LibriCtr" method="post">
 		<label>Titolo</label><input type="text" name="titolo"required/><br>
 		<label>Anno di Stampa</label><input type="date" name="annoDiStampa" required><br>
-		<label>Numero Pagine</label><input type="text" name="numeroPagine"required/><br>
+		<label>Numero Pagine</label><input type="text" name="numeroPagine" pattern="[0-9]{1,4}" required/><br>
 		<label>Genere</label><input type="text" name="genere"required/><br>
 		<label>Autore</label><input type="text" name="autore"required/><br>
 		<label>ISBN</label><input type="text" name="ISBN"required/><br>

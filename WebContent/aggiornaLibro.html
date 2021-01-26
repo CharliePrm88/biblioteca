@@ -9,8 +9,8 @@
 	<h1>Aggiorna un libro</h1>
 	<form action="LibriCtr" method="get">
 		<label>Id Libro</label><input type="text" name="idLibro" id="1" readonly/><br>
-		<label>Anno di Stampa</label><input type="date" name="annoDiStampa" id="2" required><br>
-		<label>Numero Pagine</label><input type="text" name="numeroPagine" id="3" required/><br>
+		<label>Anno di Stampa</label><input type="date" name="annoDiStampa" pattern="[0-9]{1,4}" id="2" required><br>
+		<label>Numero Pagine</label><input type="text" name="numeroPagine" pattern="[0-9]{1,10}" id="3" required/><br>
 		<label>Titolo</label><input type="text" name="titolo" id="4" required/><br>
 		<label>Genere</label><input type="text" name="genere" id="5" required/><br>
 		<label>Autore</label><input type="text" name="autore" id="6" required/><br>

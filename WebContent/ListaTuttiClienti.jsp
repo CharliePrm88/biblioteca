@@ -14,17 +14,18 @@
 <body>
 <h3> Lista dei clienti </h3>
 <table>
+<tr><td>ID Cliente</td><td>Nome</td><td>Cognome</td><td>Codice Fiscale</td></tr>
 <c:forEach var="c" items="${ListaClienti}">
 <tr>
-	<td><form action="ClientiCtr">
-	<input type="text" name="idCliente" value=${c.getIdCliente()} readonly/>
-	<input type="text" name="nome" value=${c.getNome()} readonly/>
-	<input type="text" name="cognome" value=${c.getCognome()} readonly/>
-	<input type="text" name="codiceFiscale"value=${c.getCodiceFiscale()} readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaClienti">
-	<button type="submit" class="rimuovi">Cancella</button>
+	<form action="ClientiCtr">
+	<td><input type="text" name="idCliente" value=${c.getIdCliente()} readonly/></td>
+	<td><input type="text" name="nome" value=${c.getNome()} readonly/></td>
+	<td><input type="text" name="cognome" value=${c.getCognome()} readonly/></td>
+	<td><input type="text" name="codiceFiscale"value=${c.getCodiceFiscale()} readonly/></td>
+	<td><input type="hidden" name="tipoOperazione" value="cancellaClienti">
+	<button type="submit" class="rimuovi">Cancella</button></td>
 	</form>
-	</td><td>
+	<td>
 	<form action="aggiornaCliente.html">
 	<input type="hidden" name="idCliente" value=${c.getIdCliente()}/>
 	<input type="hidden" name="nome" value=${c.getNome()} readonly/>

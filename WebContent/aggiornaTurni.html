@@ -9,7 +9,7 @@
 	<h1>Aggiorna Un turno di un dipendente</h1>
 	<form action="TurniCtr" method="get">
 		<label>Id Turno</label><input type="text" name="idturno" id="1" readonly/><br>
-		<label>Matricola</label><input type="text" name="matricola" id="2" required/><br>		
+		<label>Matricola</label><input type="text" name="matricola" id="2" pattern="[0-9]{1,10}" required/><br>		
 		<label>Inizio Turno</label><input type="date" name="data_inizio" id="3" required><br>
 		<label>Fine Turno</label><input type="date" name="data_fine" id="4" required><br>
 		
