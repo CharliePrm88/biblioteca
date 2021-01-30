@@ -101,7 +101,6 @@ public class LibriDao {
 	}
 	
 	public Libri ritornaLibro(int idLibro) {
-		System.out.print("Il valore di ID è "+idLibro);
 		Connection dbConnection = null;
 		java.sql.PreparedStatement cmd = null;
 		Libri nuovo = null;

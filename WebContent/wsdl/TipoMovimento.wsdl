@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ctr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="TipoMovimentoCtrService" targetNamespace="http://ctr/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ctr/" elementFormDefault="unqualified" targetNamespace="http://ctr/" version="1.0">
+
+  <xs:element name="cancellaTM" type="tns:cancellaTM"/>
+
+  <xs:element name="cancellaTMResponse" type="tns:cancellaTMResponse"/>
+
+  <xs:element name="inserisciTM" type="tns:inserisciTM"/>
+
+  <xs:element name="inserisciTMResponse" type="tns:inserisciTMResponse"/>
+
+  <xs:element name="modificaTM" type="tns:modificaTM"/>
+
+  <xs:element name="modificaTMResponse" type="tns:modificaTMResponse"/>
+
+  <xs:element name="ritornaListaTM" type="tns:ritornaListaTM"/>
+
+  <xs:element name="ritornaListaTMResponse" type="tns:ritornaListaTMResponse"/>
+
+  <xs:element name="ritornaTM" type="tns:ritornaTM"/>
+
+  <xs:element name="ritornaTMResponse" type="tns:ritornaTMResponse"/>
+
+  <xs:complexType name="modificaTM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoMovimento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descrizione" type="xs:string"/>
+      <xs:element name="id_tipo_movimento" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modificaTMResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseTipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="responseTipoMovimento">
+    <xs:complexContent>
+      <xs:extension base="tns:response">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="l1" nillable="true" type="tns:tipoMovimento"/>
+          <xs:element minOccurs="0" name="tm" type="tns:tipoMovimento"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="result" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ritornaListaTM">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="ritornaListaTMResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseTipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inserisciTM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inserisciTMResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseTipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cancellaTM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cancellaTMResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseTipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ritornaTM">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ritornaTMResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseTipoMovimento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="modificaTM">
+    <wsdl:part element="tns:modificaTM" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ritornaTMResponse">
+    <wsdl:part element="tns:ritornaTMResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ritornaListaTMResponse">
+    <wsdl:part element="tns:ritornaListaTMResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ritornaListaTM">
+    <wsdl:part element="tns:ritornaListaTM" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserisciTMResponse">
+    <wsdl:part element="tns:inserisciTMResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserisciTM">
+    <wsdl:part element="tns:inserisciTM" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancellaTM">
+    <wsdl:part element="tns:cancellaTM" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificaTMResponse">
+    <wsdl:part element="tns:modificaTMResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancellaTMResponse">
+    <wsdl:part element="tns:cancellaTMResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ritornaTM">
+    <wsdl:part element="tns:ritornaTM" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TipoMovimentoCtr">
+    <wsdl:operation name="modificaTM">
+      <wsdl:input message="tns:modificaTM" name="modificaTM">
+    </wsdl:input>
+      <wsdl:output message="tns:modificaTMResponse" name="modificaTMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ritornaListaTM">
+      <wsdl:input message="tns:ritornaListaTM" name="ritornaListaTM">
+    </wsdl:input>
+      <wsdl:output message="tns:ritornaListaTMResponse" name="ritornaListaTMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inserisciTM">
+      <wsdl:input message="tns:inserisciTM" name="inserisciTM">
+    </wsdl:input>
+      <wsdl:output message="tns:inserisciTMResponse" name="inserisciTMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancellaTM">
+      <wsdl:input message="tns:cancellaTM" name="cancellaTM">
+    </wsdl:input>
+      <wsdl:output message="tns:cancellaTMResponse" name="cancellaTMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ritornaTM">
+      <wsdl:input message="tns:ritornaTM" name="ritornaTM">
+    </wsdl:input>
+      <wsdl:output message="tns:ritornaTMResponse" name="ritornaTMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TipoMovimentoCtrServiceSoapBinding" type="tns:TipoMovimentoCtr">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="modificaTM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modificaTM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modificaTMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ritornaListaTM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ritornaListaTM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ritornaListaTMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inserisciTM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inserisciTM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inserisciTMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancellaTM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancellaTM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancellaTMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ritornaTM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ritornaTM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ritornaTMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TipoMovimentoCtrService">
+    <wsdl:port binding="tns:TipoMovimentoCtrServiceSoapBinding" name="TipoMovimentoCtrPort">
+      <soap:address location="http://localhost:8080/ewallet/TipoMovimentoCtr"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

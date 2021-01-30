@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ctr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ContoCorrenteCtrService" targetNamespace="http://ctr/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ctr/" elementFormDefault="unqualified" targetNamespace="http://ctr/" version="1.0">
+
+  <xs:element name="cancellaCC" type="tns:cancellaCC"/>
+
+  <xs:element name="cancellaCCResponse" type="tns:cancellaCCResponse"/>
+
+  <xs:element name="inserisciCC" type="tns:inserisciCC"/>
+
+  <xs:element name="inserisciCCResponse" type="tns:inserisciCCResponse"/>
+
+  <xs:element name="modificaCC" type="tns:modificaCC"/>
+
+  <xs:element name="modificaCCResponse" type="tns:modificaCCResponse"/>
+
+  <xs:element name="ritornaCC" type="tns:ritornaCC"/>
+
+  <xs:element name="ritornaCCResponse" type="tns:ritornaCCResponse"/>
+
+  <xs:element name="ritornaListaCC" type="tns:ritornaListaCC"/>
+
+  <xs:element name="ritornaListaCCResponse" type="tns:ritornaListaCCResponse"/>
+
+  <xs:complexType name="ritornaCC">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ritornaCCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseContoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="responseContoCorrente">
+    <xs:complexContent>
+      <xs:extension base="tns:response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cc" type="tns:contoCorrente"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="l1" nillable="true" type="tns:contoCorrente"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="result" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contoCorrente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data_creazione" type="xs:dateTime"/>
+      <xs:element name="iban" type="xs:int"/>
+      <xs:element name="idCliente" type="xs:int"/>
+      <xs:element name="saldo" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modificaCC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:contoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modificaCCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseContoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ritornaListaCC">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="ritornaListaCCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseContoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cancellaCC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:contoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cancellaCCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseContoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inserisciCC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:contoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inserisciCCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseContoCorrente"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ritornaCC">
+    <wsdl:part element="tns:ritornaCC" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ritornaListaCCResponse">
+    <wsdl:part element="tns:ritornaListaCCResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ritornaListaCC">
+    <wsdl:part element="tns:ritornaListaCC" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ritornaCCResponse">
+    <wsdl:part element="tns:ritornaCCResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserisciCC">
+    <wsdl:part element="tns:inserisciCC" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificaCCResponse">
+    <wsdl:part element="tns:modificaCCResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificaCC">
+    <wsdl:part element="tns:modificaCC" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancellaCCResponse">
+    <wsdl:part element="tns:cancellaCCResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancellaCC">
+    <wsdl:part element="tns:cancellaCC" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserisciCCResponse">
+    <wsdl:part element="tns:inserisciCCResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ContoCorrenteCtr">
+    <wsdl:operation name="ritornaCC">
+      <wsdl:input message="tns:ritornaCC" name="ritornaCC">
+    </wsdl:input>
+      <wsdl:output message="tns:ritornaCCResponse" name="ritornaCCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificaCC">
+      <wsdl:input message="tns:modificaCC" name="modificaCC">
+    </wsdl:input>
+      <wsdl:output message="tns:modificaCCResponse" name="modificaCCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ritornaListaCC">
+      <wsdl:input message="tns:ritornaListaCC" name="ritornaListaCC">
+    </wsdl:input>
+      <wsdl:output message="tns:ritornaListaCCResponse" name="ritornaListaCCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancellaCC">
+      <wsdl:input message="tns:cancellaCC" name="cancellaCC">
+    </wsdl:input>
+      <wsdl:output message="tns:cancellaCCResponse" name="cancellaCCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inserisciCC">
+      <wsdl:input message="tns:inserisciCC" name="inserisciCC">
+    </wsdl:input>
+      <wsdl:output message="tns:inserisciCCResponse" name="inserisciCCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContoCorrenteCtrServiceSoapBinding" type="tns:ContoCorrenteCtr">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ritornaCC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ritornaCC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ritornaCCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificaCC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modificaCC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modificaCCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ritornaListaCC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ritornaListaCC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ritornaListaCCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancellaCC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancellaCC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancellaCCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inserisciCC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inserisciCC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inserisciCCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContoCorrenteCtrService">
+    <wsdl:port binding="tns:ContoCorrenteCtrServiceSoapBinding" name="ContoCorrenteCtrPort">
+      <soap:address location="http://localhost:8080/ewallet/ContoCorrenteCtr"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
