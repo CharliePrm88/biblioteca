@@ -8,7 +8,7 @@
 package proxy;
 
 public class ContoCorrente  implements java.io.Serializable {
-    private java.util.Calendar data_creazione;
+    private java.util.Date data_creazione;
 
     private int iban;
 
@@ -20,7 +20,7 @@ public class ContoCorrente  implements java.io.Serializable {
     }
 
     public ContoCorrente(
-           java.util.Calendar data_creazione,
+           java.util.Date data_creazione,
            int iban,
            int idCliente,
            float saldo) {
@@ -36,7 +36,7 @@ public class ContoCorrente  implements java.io.Serializable {
      * 
      * @return data_creazione
      */
-    public java.util.Calendar getData_creazione() {
+    public java.util.Date getData_creazione() {
         return data_creazione;
     }
 
@@ -46,7 +46,7 @@ public class ContoCorrente  implements java.io.Serializable {
      * 
      * @param data_creazione
      */
-    public void setData_creazione(java.util.Calendar data_creazione) {
+    public void setData_creazione(java.util.Date data_creazione) {
         this.data_creazione = data_creazione;
     }
 

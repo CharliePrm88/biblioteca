@@ -8,7 +8,7 @@
 package proxy;
 
 public class Movimenti  implements java.io.Serializable {
-    private java.util.Calendar data_movimento;
+    private java.util.Date data_movimento;
 
     private int iban;
 
@@ -22,7 +22,7 @@ public class Movimenti  implements java.io.Serializable {
     }
 
     public Movimenti(
-           java.util.Calendar data_movimento,
+           java.util.Date data_movimento,
            int iban,
            int id,
            int id_tipo_movimento,
@@ -40,7 +40,7 @@ public class Movimenti  implements java.io.Serializable {
      * 
      * @return data_movimento
      */
-    public java.util.Calendar getData_movimento() {
+    public java.util.Date getData_movimento() {
         return data_movimento;
     }
 
@@ -50,7 +50,7 @@ public class Movimenti  implements java.io.Serializable {
      * 
      * @param data_movimento
      */
-    public void setData_movimento(java.util.Calendar data_movimento) {
+    public void setData_movimento(java.util.Date data_movimento) {
         this.data_movimento = data_movimento;
     }
 

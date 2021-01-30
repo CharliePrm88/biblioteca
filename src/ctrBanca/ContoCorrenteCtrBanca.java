@@ -3,7 +3,8 @@ package ctrBanca;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,13 +37,13 @@ public class ContoCorrenteCtrBanca extends HttpServlet {
 		// TODO Auto-generated method stub
 		ContoCorrente cc = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Calendar cal = Calendar.getInstance();
+		Date cal = null;
 		String s = request.getParameter("tipoOperazione");
 		switch(s) {
 		case "inserisciCC":
 			String data_creazione = request.getParameter("data_creazione");
 			try {
-				cal.setTime(sdf.parse(data_creazione));
+				cal = sdf.parse(data_creazione);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -54,24 +55,32 @@ public class ContoCorrenteCtrBanca extends HttpServlet {
 		case "cancellaCC":
 			String data_creazione1 = request.getParameter("data_creazione");
 			try {
-				cal.setTime(sdf.parse(data_creazione1));
+				cal=sdf.parse(data_creazione1);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			cc = new ContoCorrente(cal,Integer.parseInt(request.getParameter("iban")),Integer.parseInt(request.getParameter("idCliente")),Float.parseFloat(request.getParameter("saldo")));
 			cccp.cancellaCC(cc);
+			ResponseContoCorrente l4 = cccp.ritornaListaCC();
+			ContoCorrente[] cc4 = l4.getL1();
+			request.setAttribute("listaCC", cc4);
+			request.getRequestDispatcher("ListaTuttiCC.jsp").forward(request, response);
 			break;
-		case "modificaCC":
+		case "aggiornaCC":
 			String data_creazione2 = request.getParameter("data_creazione");
 			try {
-				cal.setTime(sdf.parse(data_creazione2));
+				cal=sdf.parse(data_creazione2);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			cc = new ContoCorrente(cal,Integer.parseInt(request.getParameter("iban")),Integer.parseInt(request.getParameter("idCliente")),Float.parseFloat(request.getParameter("saldo")));
 			cccp.modificaCC(cc);
+			ResponseContoCorrente l3 = cccp.ritornaListaCC();
+			ContoCorrente[] cc3 = l3.getL1();
+			request.setAttribute("listaCC", cc3);
+			request.getRequestDispatcher("ListaTuttiCC.jsp").forward(request, response);
 			break;
 		case "ritornaCC":
 			ResponseContoCorrente cc1=cccp.ritornaCC(Integer.parseInt(request.getParameter("idCliente")));
