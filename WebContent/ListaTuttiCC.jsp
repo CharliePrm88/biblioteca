@@ -29,9 +29,9 @@
 	</td><td>
 	<form action="aggiornaCC.html">
 	<input type="hidden" name="data_creazione" value="<fmt:formatDate value="${c.getData_creazione()}" pattern="yyyy-MM-dd"/>" readonly/>
-	<input type="hidden" name="iban" value=${c.getIban()} readonly/>
-	<input type="hidden" name="saldo" value=${c.getSaldo()} readonly/>
-	<input type="hidden" name="idCliente" value=${c.getIdCliente()} readonly/>
+	<input type="hidden" name="iban" value="${c.getIban()}" readonly/>
+	<input type="hidden" name="saldo" value="${c.getSaldo()}" readonly/>
+	<input type="hidden" name="idCliente" value="${c.getIdCliente()}" readonly/>
 	<button type="submit" class="inserisci">Modifica</button>
 	</form>
 	</td>
