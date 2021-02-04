@@ -64,7 +64,6 @@ public class TipoMovimentoCtrBanca extends HttpServlet {
 		case "ritornaListaTM":
 			ResponseTipoMovimento l1 = Mcp.ritornaListaTM();
 			TipoMovimento[] M2 = l1.getL1();
-			System.out.println(l1.getL1());
 			request.setAttribute("listaTM", M2);
 			request.getRequestDispatcher("/ListaTuttiTm.jsp").forward(request, response);
 			break;

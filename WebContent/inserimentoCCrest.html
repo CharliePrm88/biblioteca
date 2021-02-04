@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Inserisci Conto Corrente</title>
+</head>
+<body>
+	<h1>Inserisci ContoCorrente</h1>
+	<form action="ContoCorrenteCtr" method="post">
+		<label>Data Creazione</label><input type="date" name="data_creazione" required><br>
+		<label>Iban</label><input type="text" name="iban" pattern="[0-9]{1,30}" required/><br>
+		<label>Saldo</label><input type="text" name="saldo"required/><br>
+		<label>Id Cliente</label><input type="text" name="idCliente"required/><br>
+		<input type="hidden" name="tipoOperazione" value="inserisciCC">
+		<button type="submit" class="inserisci" value="Inserisci Conto Corrente!">Inserisci Conto Corrente!</button>
+	</form><br>
+	<a href=/biblioteca>Torna alla homepage</a>
+</body>
+</html>
