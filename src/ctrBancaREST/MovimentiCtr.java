@@ -163,7 +163,7 @@ public class MovimentiCtr extends HttpServlet {
 						ObjectMapper mapper = new ObjectMapper();
 						ResponseMovimenti result = mapper.readValue(output, ResponseMovimenti.class);
 						Movimenti cc2 = result.getM();
-						request.setAttribute("CC", cc2);
+						request.setAttribute("M", cc2);
 						request.getRequestDispatcher("/ritornaMrest.jsp").forward(request, response);
 					} catch (Exception e) {
 						e.printStackTrace();

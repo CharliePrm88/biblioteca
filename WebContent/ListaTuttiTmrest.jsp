@@ -16,7 +16,7 @@
 <c:forEach var="c" items="${listaTM}">
 
 <tr>
-	<td><form action="TipoMovimentoCtrBanca">
+	<td><form action="TipoMovimentiCtr">
 	<input type="text" name="idTipoMovimento" value="${c.getId_tipo_movimento()}" readonly/>
 	<input type="text" name="descrizione" value="${c.getDescrizione()}" readonly/>
 	<input type="hidden" name="tipoOperazione" value="cancellaTM">

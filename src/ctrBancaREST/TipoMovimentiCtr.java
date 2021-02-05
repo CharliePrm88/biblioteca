@@ -33,7 +33,7 @@ public class TipoMovimentiCtr extends HttpServlet {
     	try {
 			Client client = Client.create();
 			WebResource webResource = client
-			   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimento/listaTM");
+			   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimenti/listaTM");
 			ClientResponse responseRest = webResource.accept("application/json")
 	                   .get(ClientResponse.class);
 			if (response.getStatus() != 200) {
@@ -63,7 +63,7 @@ public class TipoMovimentiCtr extends HttpServlet {
 			try {
 				Client client = Client.create();
 				WebResource webResource = client
-						   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimento/inserisci");
+						   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimenti/inserisci");
 				ObjectMapper objectMapper = new ObjectMapper();
 				M = new TipoMovimento(request.getParameter("descrizione"),Integer.parseInt(request.getParameter("idTipoMovimento")));
 				String carAsString = objectMapper.writeValueAsString(M);
@@ -86,7 +86,7 @@ public class TipoMovimentiCtr extends HttpServlet {
 			try {
 				Client client = Client.create();
 				WebResource webResource = client
-						   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimento/cancella");
+						   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimenti/cancella");
 				ObjectMapper objectMapper = new ObjectMapper();
 				M = new TipoMovimento(request.getParameter("descrizione"),Integer.parseInt(request.getParameter("idTipoMovimento")));
 				String carAsString = objectMapper.writeValueAsString(M);
@@ -109,7 +109,7 @@ public class TipoMovimentiCtr extends HttpServlet {
 			try {
 				Client client = Client.create();
 				WebResource webResource = client
-						   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimento/aggiorna");
+						   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimenti/aggiorna");
 				ObjectMapper objectMapper = new ObjectMapper();
 				M = new TipoMovimento(request.getParameter("descrizione"),Integer.parseInt(request.getParameter("idTipoMovimento")));
 				String carAsString = objectMapper.writeValueAsString(M);
@@ -132,9 +132,9 @@ public class TipoMovimentiCtr extends HttpServlet {
 			try {
 				Client client = Client.create();
 				WebResource webResource = client
-				   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimento/ritornaTM");
+				   .resource("http://localhost:8080/ewalletREST/ctr/TipoMovimenti/ritornaTM");
 				MultivaluedMap<String, String> parametri = new MultivaluedMapImpl();
-				parametri.add("id_tipo_movimento", request.getParameter("id"));
+				parametri.add("id", request.getParameter("id"));
 				ClientResponse responseRest = webResource.queryParams(parametri).accept("application/json").get(ClientResponse.class);
 				if (response.getStatus() != 200) {
 				   throw new RuntimeException("Failed : HTTP error code : "
@@ -146,7 +146,7 @@ public class TipoMovimentiCtr extends HttpServlet {
 				ObjectMapper mapper = new ObjectMapper();
 				ResponseTipoMovimento result = mapper.readValue(output, ResponseTipoMovimento.class);
 				TipoMovimento cc2 = result.getTm();
-				request.setAttribute("CC", cc2);
+				request.setAttribute("TM", cc2);
 				request.getRequestDispatcher("/ritornaTMrest.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
