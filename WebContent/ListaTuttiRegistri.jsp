@@ -17,25 +17,25 @@
 <c:forEach var="c" items="${ListaRegistroLibri}">
 <tr>
 	<td><form action="RegistroLibriCtr">
-	<input type="text" name="id" value=${c.getId()} readonly/>
-	<input type="text" name="idLibro" value=${c.getIdlibro()} readonly/>
-	<input type="text" name="idCliente" value=${c.getIdcliente()} readonly/>
-	<input type="text" name="matricola" value=${c.getMatricola()} readonly/>
-	<input type="text" name="data_prestito" value=${c.getData_prestito()} readonly/>
-	<input type="text" name="data_scadenza" value=${c.getData_scadenza()} readonly/>
-	<input type="text" name="data_rientro" value=${c.getData_rientro()} readonly/>
+	<input type="text" name="id" value="${c.getId()}" readonly/>
+	<input type="text" name="idLibro" value="${c.getIdlibro()}" readonly/>
+	<input type="text" name="idCliente" value="${c.getIdcliente()}" readonly/>
+	<input type="text" name="matricola" value="${c.getMatricola()}" readonly/>
+	<input type="text" name="data_prestito" value="${c.getData_prestito()}" readonly/>
+	<input type="text" name="data_scadenza" value="${c.getData_scadenza()}" readonly/>
+	<input type="text" name="data_rientro" value="${c.getData_rientro()}" readonly/>
 	<input type="hidden" name="tipoOperazione" value="cancellaRegistroLibri">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
 	<form action="aggiornaRegistro.html">
-	<input type="hidden" name="id" value=${c.getId()}/>
-	<input type="hidden" name="idLibro" value=${c.getIdlibro()} readonly/>
-	<input type="hidden" name="idcliente" value=${c.getIdcliente()} readonly/>
-	<input type="hidden" name="matricola" value=${c.getMatricola()} readonly/>
-	<input type="hidden" name="data_prestito"value=${c.getData_prestito()} readonly/>
-	<input type="hidden" name="data_scadenza"value=${c.getData_scadenza()} readonly/>
-	<input type="hidden" name="data_rientro"value=${c.getData_rientro()} readonly/>
+	<input type="hidden" name="id" value="${c.getId()}"/>
+	<input type="hidden" name="idLibro" value="${c.getIdlibro()}" readonly/>
+	<input type="hidden" name="idcliente" value="${c.getIdcliente()}" readonly/>
+	<input type="hidden" name="matricola" value="${c.getMatricola()}" readonly/>
+	<input type="hidden" name="data_prestito"value="${c.getData_prestito()}" readonly/>
+	<input type="hidden" name="data_scadenza"value="${c.getData_scadenza()}" readonly/>
+	<input type="hidden" name="data_rientro"value="${c.getData_rientro()}" readonly/>
 	<button type="submit" class="inserisci">Modifica</button>
 	</form>
 	</td>
