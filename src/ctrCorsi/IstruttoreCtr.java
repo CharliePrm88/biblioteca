@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ejb.IstruttoreEjbRemote;
-import model.Istruttore;
-
+import dto.IstruttoreDto;
 /**
  * Servlet implementation class IstruttoreCtr
  */
@@ -39,31 +38,31 @@ public class IstruttoreCtr extends HttpServlet {
 		String s = request.getParameter("tipoOperazione");
 		switch(s) {
 		case "inserisciIstruttore":
-			Istruttore i= new Istruttore(Integer.parseInt(request.getParameter("matricola")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
+			IstruttoreDto i= new IstruttoreDto(Integer.parseInt(request.getParameter("matricola")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
 			ier.inserisciIstruttore(i);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);			break;
 		case "ritornaListaIstruttore":
-			List<Istruttore> l1 = ier.ritornaListaIstruttore();
+			List<IstruttoreDto> l1 = ier.ritornaListaIstruttore();
 			request.setAttribute("ListaIstruttore", l1);
 			request.getRequestDispatcher("/ListaTuttiIstruttore.jsp").forward(request, response);
 			break;
 		case "ritornaIstruttore":
 			int id= Integer.parseInt(request.getParameter("matricola"));
-			Istruttore c1= ier.ritornaIstruttore(id);
+			IstruttoreDto c1= ier.ritornaIstruttore(id);
 			request.setAttribute("Istruttore", c1);
 			request.getRequestDispatcher("/ritornaIstruttore.jsp").forward(request, response);
 			break;
 		case "aggiornaIstruttore":
-			Istruttore i1= new Istruttore(Integer.parseInt(request.getParameter("matricola")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
+			IstruttoreDto i1= new IstruttoreDto(Integer.parseInt(request.getParameter("matricola")),request.getParameter("nome"),request.getParameter("cognome"),request.getParameter("codiceFiscale"));
 			ier.aggiornaIstruttore(i1);
-			List<Istruttore> l2 = ier.ritornaListaIstruttore();
+			List<IstruttoreDto> l2 = ier.ritornaListaIstruttore();
 			request.setAttribute("ListaIstruttore", l2);
 			request.getRequestDispatcher("/ListaTuttiIstruttore.jsp").forward(request, response);
 			break;
 		case "cancellaIstruttore":
-			Istruttore j= new Istruttore(Integer.parseInt(request.getParameter("matricola")),null,null,null);
+			IstruttoreDto j= new IstruttoreDto(Integer.parseInt(request.getParameter("matricola")),null,null,null);
 			ier.cancellaIstruttore(j);
-			List<Istruttore> l3 = ier.ritornaListaIstruttore();
+			List<IstruttoreDto> l3 = ier.ritornaListaIstruttore();
 			request.setAttribute("ListaIstruttore", l3);
 			request.getRequestDispatcher("/ListaTuttiIstruttore.jsp").forward(request, response);
 			

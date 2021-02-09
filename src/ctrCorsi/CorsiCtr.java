@@ -14,8 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ejb.CorsiEjbRemote;
-import model.Corsi;
-
+import dto.CorsiDto;
 
 /**
  * Servlet implementation class ListaCorsiCtr
@@ -54,17 +53,17 @@ public class CorsiCtr extends HttpServlet {
 			}
 			java.sql.Date d1 = new Date(date1.getTime());
 			java.sql.Date d2 = new Date(date2.getTime());
-			Corsi i= new Corsi(Integer.parseInt(request.getParameter("id")), request.getParameter("nome"), d1,d2);
+			CorsiDto i= new CorsiDto(Integer.parseInt(request.getParameter("id")), request.getParameter("nome"), d1,d2);
 			fer.inserisciCorsi(i);
 			request.getRequestDispatcher("/Inserimento.html").forward(request, response);			break;
 		case "ritornaListaCorsi":
-			List<Corsi> l1 = fer.ritornaListaCorsi();
+			List<CorsiDto> l1 = fer.ritornaListaCorsi();
 			request.setAttribute("ListaCorsi", l1);
 			request.getRequestDispatcher("/ListaTuttiCorsi.jsp").forward(request, response);
 			break;
 		case "ritornaCorsi":
 			int id= Integer.parseInt(request.getParameter("id"));
-			Corsi c1= fer.ritornaCorsi(id);
+			CorsiDto c1= fer.ritornaCorsi(id);
 			request.setAttribute("Corsi", c1);
 			request.getRequestDispatcher("/ritornaCorsi.jsp").forward(request, response);
 			break;
@@ -82,9 +81,9 @@ public class CorsiCtr extends HttpServlet {
 			}
 			java.sql.Date d3 = new Date(date3.getTime());
 			java.sql.Date d4 = new Date(date4.getTime());
-			Corsi i1= new Corsi(Integer.parseInt(request.getParameter("id")), request.getParameter("nome"), d3,d4);
+			CorsiDto i1= new CorsiDto(Integer.parseInt(request.getParameter("id")), request.getParameter("nome"), d3,d4);
 			fer.aggiornaCorsi(i1);
-			List<Corsi> l2 = fer.ritornaListaCorsi();
+			List<CorsiDto> l2 = fer.ritornaListaCorsi();
 			request.setAttribute("ListaCorsi", l2);
 			request.getRequestDispatcher("/ListaTuttiCorsi.jsp").forward(request, response);
 			break;
@@ -102,9 +101,9 @@ public class CorsiCtr extends HttpServlet {
 			}
 			java.sql.Date d5 = new Date(date5.getTime());
 			java.sql.Date d6 = new Date(date6.getTime());
-			Corsi j= new Corsi(Integer.parseInt(request.getParameter("id")), request.getParameter("nome"), d5,d6);
+			CorsiDto j= new CorsiDto(Integer.parseInt(request.getParameter("id")), request.getParameter("nome"), d5,d6);
 			fer.cancellaCorsi(j);
-			List<Corsi> l3 = fer.ritornaListaCorsi();
+			List<CorsiDto> l3 = fer.ritornaListaCorsi();
 			request.setAttribute("ListaCorsi", l3);
 			request.getRequestDispatcher("/ListaTuttiCorsi.jsp").forward(request, response);
 			break;
