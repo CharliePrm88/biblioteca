@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-<%@page import="model.Corsi" %>
+<%@page import="dto.CorsiDto" %>
 <!DOCTYPE html>
 <html>
 <head>

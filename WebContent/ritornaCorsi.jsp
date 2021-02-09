@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="model.Corsi" %>
+<%@page import="dto.CorsiDto" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 <body>
 <h3> Lista dei corsi </h3>
 	<table border="1px">
-<% Corsi c = (Corsi)request.getAttribute("Corsi");%>
+<% CorsiDto c = (CorsiDto)request.getAttribute("Corsi");%>
         <tr>
         <td> <%=c.getId()%></td>
         <td><%=c.getNome()%> </td>

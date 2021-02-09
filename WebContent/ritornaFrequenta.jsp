@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="model.Frequenta" %>
+<%@page import="dto.FrequentaDto" %>
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@
 <body>
 <h3> Lista Iscrizioni</h3>
 	<table border="1px">
-<% Frequenta c = (Frequenta)request.getAttribute("Frequenta");%>
+<% FrequentaDto c = (FrequentaDto)request.getAttribute("Frequenta");%>
 <% java.text.DateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
 %>
         <tr>
