@@ -41,6 +41,16 @@ display: inline-block;
 margin:3px;
 }
 
+select{width: 150px;
+display: inline-block;
+margin:3px;
+}
+
+option{width: 150px;
+display: inline-block;
+margin:3px;
+}
+
 label { width: 120px;
 margin:3px;
 display: inline-block; 

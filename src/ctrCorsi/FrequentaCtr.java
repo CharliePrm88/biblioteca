@@ -10,8 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ejb.CorsiEjbRemote;
 import ejb.FrequentaEjbRemote;
+import ejb.IstruttoreEjbRemote;
+import dto.CorsiDto;
 import dto.FrequentaDto;
+import dto.IstruttoreDto;
 
 /**
  * Servlet implementation class FrequentaCtr
@@ -30,17 +34,28 @@ public class FrequentaCtr extends HttpServlet {
     
     @Resource(mappedName = "java:jboss/exported/Corsi/FrequentaEjb!ejb.FrequentaEjbRemote")
 	private FrequentaEjbRemote fer;
-
+    @Resource(mappedName = "java:jboss/exported/Corsi/CorsiEjb!ejb.CorsiEjbRemote")
+	private CorsiEjbRemote cer;
+    @Resource(mappedName = "java:jboss/exported/Corsi/IstruttoreEjb!ejb.IstruttoreEjbRemote")
+	private IstruttoreEjbRemote ier;
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String s = request.getParameter("tipoOperazione");
 		switch(s) {
+		case "formInserimentoFrequenta":
+			List<CorsiDto> lc = cer.ritornaListaCorsi();
+			List<IstruttoreDto> li = ier.ritornaListaIstruttore();
+			request.setAttribute("ListaCorsi", lc);
+			request.setAttribute("ListaIstruttore", li);
+			request.getRequestDispatcher("/inserimentoFrequenta.jsp").forward(request, response);
+			break;
 		case "inserisciFrequenta":
 			FrequentaDto i= new FrequentaDto(Integer.parseInt(request.getParameter("id")),Integer.parseInt(request.getParameter("idCorso")),Integer.parseInt(request.getParameter("idDipendente")),Integer.parseInt(request.getParameter("idIstruttore")));
 			fer.inserisciFrequenta(i);
-			request.getRequestDispatcher("/Inserimento.html").forward(request, response);			break;
+			request.getRequestDispatcher("/Inserimento.html").forward(request, response);			
+			break;
 		case "ritornaListaFrequenta":
 			List<FrequentaDto> l1 = fer.ritornaListaFrequenta();
 			request.setAttribute("ListaFrequenta", l1);
