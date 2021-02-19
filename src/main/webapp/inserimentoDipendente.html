@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Inserisci Dipendente</title>
+</head>
+<body>
+	<h1>Inserisci Dipendente</h1>
+	<form action="DipendenteCtr" method="post">
+		<label>Nome</label><input type="text" name="nome"required/><br>
+		<label>Cognome</label><input type="text" name="cognome"required/><br>
+		<label>Codice Fiscale</label><input type="text" name="codiceFiscale" pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$" required/><br>
+		<input type="hidden" name="tipoOperazione" value="inserisciDipendente">
+		<button type="submit" class="inserisci" value="Inserisci dipendente!">Inserisci Dipendente!</button>
+	</form>
+	<br>
+	<a href=/biblioteca>Torna alla homepage</a>
+</body>
+</html>

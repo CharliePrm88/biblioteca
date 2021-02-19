@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="style.css">
+<title>Ricerca Frequenta per Id</title>
+</head>
+<body>
+<form action="FrequentaCtr" method="get">
+	<label>Inserisci l'ID dell'iscrizione</label><input type="text" name="id"required/><br>
+	<input type="hidden" name="tipoOperazione" value="ritornaFrequenta">
+<button type="submit" value="Ricerca Frequenta!" class="inserisci">Ricerca Iscrizione!</button>
+</form>
+
+<form action="FrequentaCtr" method="get">
+	<input type="hidden" name="tipoOperazione" value="ritornaListaFrequenta">
+<button type="submit" value="Ricerca TUTTE le iscrizioni" class="inserisci">Ricerca TUTTE le iscrizioni</button>
+</form><br>
+	<a href=/biblioteca>Torna alla homepage</a>
+</body>
+</html>

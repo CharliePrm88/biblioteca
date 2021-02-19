@@ -1,0 +1,72 @@
+@charset "ISO-8859-1";
+
+body{
+    text-align:center;
+    background-color: black;
+    color: white;
+    box-shadow: 10px 10 px 10px 10px grey;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+button.inserisci{
+    background-color:greenyellow;
+    color:black;
+    text-align: center;
+    border:none;
+}
+
+button.inserisci:hover{
+    background-color:green;
+    color:white;
+    text-align: center;
+    border:whitesmoke;
+}
+
+button.rimuovi{
+    background-color:lightcoral;
+    text-align: center;
+    border: none;
+}
+button.rimuovi:hover{
+    background-color:red;
+    text-align: center;
+    border:white;
+    color:white;
+}
+
+input{width: 150px;
+display: inline-block;
+margin:3px;
+}
+
+select{width: 150px;
+display: inline-block;
+margin:3px;
+}
+
+option{width: 150px;
+display: inline-block;
+margin:3px;
+}
+
+label { width: 120px;
+margin:3px;
+display: inline-block; 
+}
+input[type="text"]:read-only {
+	width: 100px;
+    cursor: not-allowed;
+    background-color: #f8f8f8;
+    color: black;
+}
+h1{
+    text-align: center;
+}
+a{color:white;
+}
+a:hover{color:yellow;}
+
+a:visited{color:white;}
+a:active{color:green;} 

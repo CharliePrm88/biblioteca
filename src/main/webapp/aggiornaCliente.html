@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Aggiorna Cliente</title>
+</head>
+<body>
+<h1>Aggiorna Cliente</h1>
+	<form action="ClientiCtr" method="get">
+		<label>Id Cliente</label><input type="text" name="idCliente" id="1" readonly/><br>
+		<label>Nome</label><input type="text" name="nome"id="2" required/><br>
+		<label>Cognome</label><input type="text" name="cognome"id="3" required/><br>
+		<label>Codice Fiscale</label><input type="text" name="codiceFiscale"id="4" pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$" required/><br>
+		<input type="hidden" name="tipoOperazione" value="aggiornaClienti">
+		<button type="submit" class="inserisci">Aggiorna Cliente!</button>
+	</form>
+	
+<script type="text/javascript">function getUrlParams() {
+
+	  var paramMap = {};
+	  if (location.search.length == 0) {
+	    return paramMap;
+	  }
+	  var parts = location.search.substring(1).split("&");
+
+	  for (var i = 0; i < parts.length; i ++) {
+	    var component = parts[i].split("=");
+	    paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+	  }
+	  return paramMap;
+	}
+var params = getUrlParams();
+document.getElementById('1').value = params.idCliente.replace("/","");
+document.getElementById('2').value = params.nome;
+document.getElementById('3').value = params.cognome;
+document.getElementById('4').value = params.codiceFiscale;
+</script>
+</body>
+</html>
