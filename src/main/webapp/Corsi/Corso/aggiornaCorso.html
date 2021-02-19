@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../style.css">
+<meta charset="ISO-8859-1">
+<title>Aggiorna Corso</title>
+</head>
+<body>
+<h1>Aggiorna Corso</h1>
+	<form action="CorsiCtr" method="get">
+		<label>ID Corso</label><input type="text" name="id" id="1" pattern="[0-9]{1,30}" required/><br>
+		<label>Titolo del Corso</label><input type="text" name="nome" id="2" required/><br>
+		<label>Data inizio</label><input type="date" name="data_inizio" id="3" required><br>
+		<label>Data fine</label><input type="date" name="data_fine" id="4" required><br>
+		
+		<input type="hidden" name="tipoOperazione" value="aggiornaCorsi">
+		<button type="submit" class="inserisci">Aggiorna Corso!</button>
+	</form>
+	
+<script type="text/javascript">function getUrlParams() {
+
+	  var paramMap = {};
+	  if (location.search.length == 0) {
+	    return paramMap;
+	  }
+	  var parts = location.search.substring(1).split("&");
+
+	  for (var i = 0; i < parts.length; i ++) {
+	    var component = parts[i].split("=");
+	    paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+	  }
+	  return paramMap;
+	}
+var params = getUrlParams();
+document.getElementById('1').value = params.id;
+document.getElementById('2').value = params.nome;
+document.getElementById('3').value = params.data_inizio;
+document.getElementById('4').value = params.data_fine;
+</script>
+</body>
+</html>

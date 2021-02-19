@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../../style.css">
+<meta charset="ISO-8859-1">
+<title>Inserisci Prestito</title>
+</head>
+<body>
+	<h1>Inserisci Prestito di un libro</h1>
+	<form action="RegistroLibriCtr" method="post">
+		<label>Id Libro</label><input type="text" name="idLibro"required/><br>
+		<label>Id Cliente</label><input type="text" name="idCliente"required/><br>
+		<label>Matricola Dipendente</label><input type="text" name="matricola"required/><br>
+		<label>Data del prestito</label><input type="date" name="data_prestito" required><br>
+		<label>Data Previsto Rientro</label><input type="date" name="data_scadenza" required><br>
+		<label>Data Effettivo rientro</label><input type="date" name="data_rientro" required><br>
+		
+		<input type="hidden" name="tipoOperazione" value="inserisciRegistro">
+		<button type="submit" class="inserisci" value="Inserisci Prestito!">Inserisci Prestito!</button>
+	</form><br>
+	<a href=/biblioteca>Torna alla homepage</a>
+</body>
+</html>

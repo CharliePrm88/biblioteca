@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../style.css">
+<meta charset="ISO-8859-1">
+<title>Aggiorna Tipo Movimento</title>
+</head>
+<body>
+<h1>Aggiorna Tipo Movimento</h1>
+	<form action="TipoMovimentoCtrBanca" method="get">
+		<label>ID Tipo movimento</label><input type="text" name="idTipoMovimento" id="1" pattern="[0-9]{1,30}" required/><br>
+		<label>Descrizione</label><input type="text" name="descrizione" id="2" required/><br>
+		<input type="hidden" name="tipoOperazione" value="aggiornaTM">
+		<button type="submit" class="inserisci">Aggiorna Tipo Movimento!</button>
+	</form>
+	
+<script type="text/javascript">function getUrlParams() {
+
+	  var paramMap = {};
+	  if (location.search.length == 0) {
+	    return paramMap;
+	  }
+	  var parts = location.search.substring(1).split("&");
+
+	  for (var i = 0; i < parts.length; i ++) {
+	    var component = parts[i].split("=");
+	    paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+	  }
+	  return paramMap;
+	}
+var params = getUrlParams();
+document.getElementById('1').value = params.idTipoMovimento;
+document.getElementById('2').value = params.descrizione;
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../style.css">
+<meta charset="ISO-8859-1">
+<title>Aggiorna Registro</title>
+</head>
+<body>
+	<h1>Aggiorna Registro dei prestiti</h1>
+	<form action="RegistroLibriCtr" method="get">
+		<label>Id Prestito</label><input type="text" name="id" id="1" readonly/><br>
+		<label>Id Libro</label><input type="text" name="idLibro" id="2" pattern="[0-9]{1,10}" required/><br>
+		<label>Id Cliente</label><input type="text" name="idCliente" id="3" pattern="[0-9]{1,10}" required/><br>
+		<label>Matricola Dipendente</label><input type="text" name="matricola" id="4" pattern="[0-9]{1,10}" required/><br>
+		<label>Data del prestito</label><input type="date" name="data_prestito" id="5" required><br>
+		<label>Data Previsto Rientro</label><input type="date" name="data_scadenza" id="6" required><br>
+		<label>Data Effettivo rientro</label><input type="date" name="data_rientro" id="7" required><br>
+		<input type="hidden" name="tipoOperazione" value="aggiornaRegistroLibri">
+		<button type="submit" class="inserisci">Aggiorna Registro</button>
+	</form><br>
+	<a href=/biblioteca>Torna alla homepage</a>
+	<script type="text/javascript">function getUrlParams() {
+
+	  var paramMap = {};
+	  if (location.search.length == 0) {
+	    return paramMap;
+	  }
+	  var parts = location.search.substring(1).split("&");
+
+	  for (var i = 0; i < parts.length; i ++) {
+	    var component = parts[i].split("=");
+	    paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+	  }
+	  return paramMap;
+	}
+var params = getUrlParams();
+document.getElementById('1').value = params.id.replace("/","");
+document.getElementById('2').value = params.idLibro;
+document.getElementById('3').value = params.idcliente;
+document.getElementById('4').value = params.matricola;
+document.getElementById('5').value = params.data_prestito;
+document.getElementById('6').value = params.data_scadenza;
+document.getElementById('7').value = params.data_rientro;
+</script>
+	
+</body>
+</html>

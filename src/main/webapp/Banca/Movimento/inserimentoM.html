@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../../style.css">
+<meta charset="ISO-8859-1">
+<title>Inserisci Movimento</title>
+</head>
+<body>
+	<h1>Inserisci Movimento</h1>
+	<form action="MovimentiCtrBanca" method="post">
+		<label>Data Movimento</label><input type="date" name="data_movimento" required><br>
+		<label>Iban</label><input type="text" name="iban" pattern="[0-9]{1,30}" required/><br>
+		<label>Id</label><input type="text" name="id" pattern="[0-9]{1,30}" required/><br>
+		<label>Id Tipo Movimento</label><input type="text" name="idTipoMovimento" pattern="[0-9]{1,30}" required/><br>
+		<label>Importo</label><input type="text" name="importo" required/><br>
+		<input type="hidden" name="tipoOperazione" value="inserisciM">
+		<button type="submit" class="inserisci" value="Inserisci Conto Corrente!">Inserisci Movimento!</button>
+	</form><br>
+	<a href=/biblioteca>Torna alla homepage</a>
+</body>
+</html>

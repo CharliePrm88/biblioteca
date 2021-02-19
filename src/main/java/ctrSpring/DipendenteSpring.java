@@ -22,7 +22,7 @@ public class DipendenteSpring {
 	public String ListaDipendenti(ModelMap model) {
 		List<Dipendenti> l1 = ritornaListaDipendenti();
 		model.addAttribute("ListaDipendenti",l1);
-		return "ListaTuttiDipendenti";
+		return "/Biblioteca/Dipendente/ListaTuttiDipendenti";
 
 	}
 
