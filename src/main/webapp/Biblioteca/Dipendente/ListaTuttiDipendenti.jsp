@@ -10,6 +10,7 @@
 <head>
 <spring:url value="/Biblioteca/src/main/webapp/style.css" var="coreCss" />
 	<link rel="stylesheet" href="${coreCss}">
+	<link rel="stylesheet" href="../../style.css">
 <meta charset="ISO-8859-1">
 <title>Lista di Tutti i Dipendenti</title>
 </head>
@@ -18,7 +19,7 @@
 <table>
 <c:forEach var="c" items="${ListaDipendenti}">
 <tr>
-	<td><form action="DipendenteCtr">
+	<td><form action="Cancella" method="delete">
 	<input type="text" name="matricola" value="${c.getMatricola()}" readonly/>
 	<input type="text" name="nome" value="${c.getNome()}" readonly/>
 	<input type="text" name="cognome" value="${c.getCognome()}" readonly/>

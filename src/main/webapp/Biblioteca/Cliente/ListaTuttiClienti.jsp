@@ -17,7 +17,7 @@
 <tr><td>ID Cliente</td><td>Nome</td><td>Cognome</td><td>Codice Fiscale</td></tr>
 <c:forEach var="c" items="${ListaClienti}">
 <tr>
-	<form action="ClientiCtr">
+	<form action="Cancella">
 	<td><input type="text" name="idCliente" value="${c.getIdCliente()}" readonly/></td>
 	<td><input type="text" name="nome" value="${c.getNome()}" readonly/></td>
 	<td><input type="text" name="cognome" value="${c.getCognome()}" readonly/></td>

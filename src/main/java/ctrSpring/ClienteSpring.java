@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.ClientiDao;
@@ -20,12 +21,50 @@ public class ClienteSpring {
 	ClientiDao cli = new ClientiDao();
 
 
-	@RequestMapping(value = "/ListaClienti", method = RequestMethod.GET)
+	@RequestMapping(value = "/Biblioteca/Cliente/Lista", method = RequestMethod.GET)
 	public String ListaClienti(ModelMap model) {
 		List<Clienti> l1 = ritornaListaClienti();
 		model.addAttribute("ListaClienti",l1);
 		return "ListaTuttiClienti";
 
+	}
+	
+	@RequestMapping(value = "/Biblioteca/Cliente/Ritorna", method = RequestMethod.GET)
+	public ModelAndView ritornaCliente(@RequestParam(value="idCliente",required = true,defaultValue ="0") int id) {
+		ModelAndView model = new ModelAndView();
+		Clienti Cliente = ritornaClienti(id);
+		model.setViewName("Biblioteca/Cliente/ritornaCliente");
+		model.addObject("Clienti", Cliente);
+		return model;
+	}
+	
+	@RequestMapping(value = "/Biblioteca/Cliente/Inserisci", method = RequestMethod.POST)
+	public String inserisciClienti() {
+		
+		return "inserimento.html";
+
+	}
+	
+	@RequestMapping(value = "/Biblioteca/Cliente/Cancella", method = RequestMethod.GET)
+	public ModelAndView cancellaCliente(@RequestParam(value="idCliente") int id) {
+		ModelAndView model = new ModelAndView();
+		Clienti Cliente = ritornaClienti(id);
+		cancellaClienti(Cliente);
+		List<Clienti> l1 = ritornaListaClienti();
+		model.setViewName("/Biblioteca/Cliente/ListaTuttiClienti");
+		model.addObject("ListaClienti",l1);
+		return model;
+	}
+	
+	@RequestMapping(value = "/Biblioteca/Cliente/Modifica", method = RequestMethod.GET)
+	public ModelAndView modificaCliente(@RequestParam(value="idCliente") int matricola, @RequestParam(value="nome") String nome, @RequestParam(value="cognome") String cognome, @RequestParam(value="codiceFiscale") String codiceFiscale) {
+		ModelAndView model = new ModelAndView();
+		Clienti Cliente = new Clienti(matricola,nome,cognome,codiceFiscale);
+		aggiornaClienti(Cliente);
+		List<Clienti> l1 = ritornaListaClienti();
+		model.setViewName("/Biblioteca/Cliente/ListaTuttiClienti");
+		model.addObject("ListaClienti",l1);
+		return model;
 	}
 
 	
