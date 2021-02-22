@@ -1,5 +1,8 @@
 package ctrSpring;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,51 +21,66 @@ import model.RegistroLibri;
 @Controller
 public class RegistroLibriSpring {
 	RegistroLibriDao reg = new RegistroLibriDao();   
-	@RequestMapping(value = "/ListaRegistroLibri", method = RequestMethod.GET)
+	@RequestMapping(value = "/Biblioteca/Registro/Lista", method = RequestMethod.GET)
 	public String ListaRegistroLibri(ModelMap model) {
 		List<RegistroLibri> l1 = ritornaListaRegistroLibri();
 		model.addAttribute("ListaRegistroLibri",l1);
-		return "ListaTuttiRegistri";
+		return "/Biblioteca/Registro/ListaTuttiRegistri";
 
 	}
 
-//	@RequestMapping(value = "/Biblioteca/RegistroLibri/Ritorna", method = RequestMethod.GET)
-//	public ModelAndView ritornaRegistroLibrii(@RequestParam(value="idRegistro",required = true,defaultValue ="0") int id) {
-//		ModelAndView model = new ModelAndView();
-//		RegistroLibri RegistroLibri = ritornaRegistroLibri(id);
-//		model.setViewName("Biblioteca/RegistroLibri/ritornaRegistroLibri");
-//		model.addObject("RegistroLibri", RegistroLibri);
-//		return model;
-//	}
-//	
-//	@RequestMapping(value = "/Biblioteca/RegistroLibri/Inserisci", method = RequestMethod.POST)
-//	public String inserisciRegistroLibri() {
-//		
-//		return "inserimento.html";
-//
-//	}
-//	
-//	@RequestMapping(value = "/Biblioteca/RegistroLibri/Cancella", method = RequestMethod.GET)
-//	public ModelAndView cancellaRegistroLibri(@RequestParam(value="matricola") int id) {
-//		ModelAndView model = new ModelAndView();
-//		RegistroLibri RegistroLibri = ritornaRegistroLibri(id);
-//		cancellaRegistroLibri(RegistroLibri);
-//		List<RegistroLibri> l1 = ritornaListaRegistroLibri();
-//		model.setViewName("/Biblioteca/RegistroLibri/ListaTuttiRegistri");
-//		model.addObject("ListaRegistroLibri",l1);
-//		return model;
-//	}
-//	
-//	@RequestMapping(value = "/Biblioteca/RegistroLibri/Modifica", method = RequestMethod.GET)
-//	public ModelAndView modificaRegistroLibri(@RequestParam(value="matricola") int matricola, @RequestParam(value="nome") String nome, @RequestParam(value="cognome") String cognome, @RequestParam(value="codiceFiscale") String codiceFiscale) {
-//		ModelAndView model = new ModelAndView();
-//		RegistroLibri RegistroLibri = new RegistroLibri(idlibro,idcliente,matricola,data_prestito,data_scadenza,data_rientro);
-//		aggiornaRegistroLibri(RegistroLibri);
-//		List<RegistroLibri> l1 = ritornaListaRegistroLibri();
-//		model.setViewName("/Biblioteca/RegistroLibri/ListaTuttiRegistroLibri");
-//		model.addObject("ListaRegistroLibri",l1);
-//		return model;
-//	}
+	@RequestMapping(value = "/Biblioteca/Registro/Ritorna", method = RequestMethod.GET)
+	public ModelAndView ritornaRegistroLibrii(@RequestParam(value="idRegistro",required = true,defaultValue ="0") int id) {
+		ModelAndView model = new ModelAndView();
+		RegistroLibri RegistroLibri = ritornaRegistroLibri(id);
+		model.setViewName("Biblioteca/RegistroLibri/ritornaRegistroLibri");
+		model.addObject("RegistroLibri", RegistroLibri);
+		return model;
+	}
+	
+	@RequestMapping(value = "/Biblioteca/Registro/Inserisci", method = RequestMethod.POST)
+	public String inserisciRegistroLibri() {
+		
+		return "inserimento.html";
+
+	}
+	
+	@RequestMapping(value = "/Biblioteca/Registro/Cancella", method = RequestMethod.GET)
+	public ModelAndView cancellaRegistroLibri(@RequestParam(value="matricola") int id) {
+		ModelAndView model = new ModelAndView();
+		RegistroLibri RegistroLibri = ritornaRegistroLibri(id);
+		cancellaRegistroLibri(RegistroLibri);
+		List<RegistroLibri> l1 = ritornaListaRegistroLibri();
+		model.setViewName("/Biblioteca/RegistroLibri/ListaTuttiRegistri");
+		model.addObject("ListaRegistroLibri",l1);
+		return model;
+	}
+	
+	@RequestMapping(value = "/Biblioteca/Registro/Modifica", method = RequestMethod.GET)
+	public ModelAndView modificaRegistroLibri(@RequestParam(value="idRegistro") int idRegistro, @RequestParam(value="idLibro") int idlibro,  @RequestParam(value="idCliente") int idcliente, @RequestParam(value="matricola") int matricola, @RequestParam(value="data_prestito") String data_prestito, @RequestParam(value="data_scadenza") String data_scadenza, @RequestParam(value="data_rientro") String data_rientro) {
+		ModelAndView model = new ModelAndView();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date data_prestito1 = null;
+		java.util.Date data_scadenza1= null;
+		java.util.Date data_rientro1= null;
+		try {
+			data_prestito1 = sdf.parse(data_prestito);
+			data_scadenza1= sdf.parse(data_scadenza);
+			data_rientro1= sdf.parse(data_rientro);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		java.sql.Date d1 = new Date(data_prestito1.getTime());
+		java.sql.Date d2 = new Date(data_scadenza1.getTime());
+		java.sql.Date d3 = new Date(data_rientro1.getTime());
+		RegistroLibri RegistroLibri = new RegistroLibri(idRegistro,idlibro,idcliente,matricola,d1,d2,d3);
+		aggiornaRegistroLibri(RegistroLibri);
+		List<RegistroLibri> l1 = ritornaListaRegistroLibri();
+		model.setViewName("/Biblioteca/Registro/ListaTuttiRegistroLibri");
+		model.addObject("ListaRegistroLibri",l1);
+		return model;
+	}
 	
 	private void inserisciregendente(RegistroLibri r) {
 		reg.inserisciregendente(r);

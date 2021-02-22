@@ -16,7 +16,7 @@
 <table>
 <c:forEach var="c" items="${ListaRegistroLibri}">
 <tr>
-	<td><form action="RegistroLibriCtr">
+	<td><form action="Cancella">
 	<input type="text" name="id" value="${c.getId()}" readonly/>
 	<input type="text" name="idLibro" value="${c.getIdlibro()}" readonly/>
 	<input type="text" name="idCliente" value="${c.getIdcliente()}" readonly/>
@@ -24,7 +24,6 @@
 	<input type="text" name="data_prestito" value="${c.getData_prestito()}" readonly/>
 	<input type="text" name="data_scadenza" value="${c.getData_scadenza()}" readonly/>
 	<input type="text" name="data_rientro" value="${c.getData_rientro()}" readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaRegistroLibri">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
@@ -42,6 +41,6 @@
 </tr>
 </c:forEach>
 </table><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 </body>
 </html>

@@ -25,7 +25,7 @@ public class ClienteSpring {
 	public String ListaClienti(ModelMap model) {
 		List<Clienti> l1 = ritornaListaClienti();
 		model.addAttribute("ListaClienti",l1);
-		return "ListaTuttiClienti";
+		return "/Biblioteca/Cliente/ListaTuttiClienti";
 
 	}
 	

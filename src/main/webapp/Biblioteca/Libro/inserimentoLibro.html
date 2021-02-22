@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Inserisci Libro</h1>
-	<form action="LibriCtr" method="post">
+	<form action="Inserisci" method="post">
 		<label>Titolo</label><input type="text" name="titolo"required/><br>
 		<label>Anno di Stampa</label><input type="date" name="annoDiStampa" required><br>
 		<label>Numero Pagine</label><input type="text" name="numeroPagine" pattern="[0-9]{1,4}" required/><br>
@@ -16,9 +16,8 @@
 		<label>ISBN</label><input type="text" name="ISBN"required/><br>
 		<label>Casa Editrice</label><input type="text" name="casaEditrice"required/><br>
 		<label>Posizione</label><input type="text" name="posizione"required/><br>
-		<input type="hidden" name="tipoOperazione" value="inserisciLibro">
 		<button type="submit" class="inserisci" value="Inserisci Libro!">Inserisci Libro!</button>
 	</form><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 </body>
 </html>

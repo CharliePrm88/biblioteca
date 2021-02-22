@@ -7,12 +7,10 @@
 </head>
 <body>
 	<h1>Inserisci un turno di un dipendente</h1>
-	<form action="TurniCtr" method="post">
+	<form action="Inserisci" method="post">
 		<label>Matricola</label><input type="text" name="matricola"required/><br>		
 		<label>Inizio Turno</label><input type="date" name="data_inizio" required><br>
 		<label>Fine Turno</label><input type="date" name="data_fine" required><br>
-		
-		<input type="hidden" name="tipoOperazione" value="inserisciTurni">
 		<button type="submit" class="inserisci" value="Inserisci Turno!">Inserisci Turno!</button>
 	</form><br>
 	<a href=/biblioteca>Torna alla homepage</a>

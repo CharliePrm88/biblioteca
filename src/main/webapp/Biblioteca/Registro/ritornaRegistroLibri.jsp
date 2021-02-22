@@ -21,6 +21,6 @@
          <td><%=c.getData_rientro()%> </td>
         </tr>
 </table><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 </body>
 </html>

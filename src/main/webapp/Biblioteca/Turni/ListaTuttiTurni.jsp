@@ -16,12 +16,11 @@
 <table>
 <c:forEach var="c" items="${ListaTurni}">
 <tr>
-	<td><form action="TurniCtr">
+	<td><form action="Cancella">
 	<input type="text" name="idturno" value="${c.getId()}" readonly/>
 	<input type="text" name="matricola" value="${c.getMatricola()}" readonly/>
 	<input type="text" name="data_inizio_turno" value="${c.getData_inizio_turno()}" readonly/>
 	<input type="text" name="data_fine_turno"value="${c.getData_fine_turno()}" readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaTurni">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
@@ -36,6 +35,6 @@
 </tr>
 </c:forEach>
 </table><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 </body>
 </html>

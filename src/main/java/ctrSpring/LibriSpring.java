@@ -22,44 +22,44 @@ import model.Libri;
 public class LibriSpring {
 	LibriDao cli = new LibriDao();
 
-	@RequestMapping(value = "/ListaLibri", method = RequestMethod.GET)
+	@RequestMapping(value = "/Biblioteca/Libro/Lista", method = RequestMethod.GET)
 	public String ListaLibri(ModelMap model) {
 		List<Libri> l1 = ritornaListaLibri();
 		model.addAttribute("ListaLibri",l1);
-		return "ListaTuttiLibri";
+		return "/Biblioteca/Libro/ListaTuttiLibri";
 
 	}
 
 
-	@RequestMapping(value = "/Biblioteca/Dipendente/Ritorna", method = RequestMethod.GET)
-	public ModelAndView ritornaDipendente(@RequestParam(value="idLibro",required = true,defaultValue ="0") int id) {
+	@RequestMapping(value = "/Biblioteca/Libro/Ritorna", method = RequestMethod.GET)
+	public ModelAndView ritornaLibri(@RequestParam(value="idLibro",required = true,defaultValue ="0") int id) {
 		ModelAndView model = new ModelAndView();
-		Libri dipendente = ritornaLibro(id);
-		model.setViewName("Biblioteca/Dipendente/ritornaDipendente");
-		model.addObject("Libri", dipendente);
+		Libri Libri = ritornaLibro(id);
+		model.setViewName("Biblioteca/Libri/ritornaLibri");
+		model.addObject("Libri", Libri);
 		return model;
 	}
 	
-	@RequestMapping(value = "/Biblioteca/Dipendente/Inserisci", method = RequestMethod.POST)
+	@RequestMapping(value = "/Biblioteca/Libro/Inserisci", method = RequestMethod.POST)
 	public String inserisciLibri() {
 		
 		return "inserimento.html";
 
 	}
 	
-	@RequestMapping(value = "/Biblioteca/Dipendente/Cancella", method = RequestMethod.GET)
-	public ModelAndView cancellaDipendente(@RequestParam(value="idLibro") int id) {
+	@RequestMapping(value = "/Biblioteca/Libro/Cancella", method = RequestMethod.GET)
+	public ModelAndView cancellaLibri(@RequestParam(value="idlibro") int id) {
 		ModelAndView model = new ModelAndView();
-		Libri dipendente = ritornaLibro(id);
-		cancellaLibri(dipendente);
+		Libri Libri = ritornaLibro(id);
+		cancellaLibri(Libri);
 		List<Libri> l1 = ritornaListaLibri();
-		model.setViewName("/Biblioteca/Dipendente/ListaTuttiLibri");
+		model.setViewName("/Biblioteca/Libro/ListaTuttiLibri");
 		model.addObject("ListaLibri",l1);
 		return model;
 	}
 	
-	@RequestMapping(value = "/Biblioteca/Dipendente/Modifica", method = RequestMethod.GET)
-	public ModelAndView modificaDipendente(@RequestParam(value="idLibro") int id, @RequestParam(value="annoDiStampa") String annoDiStampa, @RequestParam(value="numeroPagine") int numeroPagine, @RequestParam(value="titolo") String titolo, @RequestParam(value="genere") String genere, @RequestParam(value="autore") String autore, @RequestParam(value="isbn") String isbn, @RequestParam(value="casaEditrice") String casaEditrice, @RequestParam(value="posizione") String posizione) {
+	@RequestMapping(value = "/Biblioteca/Libro/Modifica", method = RequestMethod.GET)
+	public ModelAndView modificaLibri(@RequestParam(value="idlibro") int id, @RequestParam(value="annoDiStampa") String annoDiStampa, @RequestParam(value="numeroPagine") int numeroPagine, @RequestParam(value="titolo") String titolo, @RequestParam(value="genere") String genere, @RequestParam(value="autore") String autore, @RequestParam(value="ISBN") String isbn, @RequestParam(value="casaEditrice") String casaEditrice, @RequestParam(value="posizione") String posizione) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		java.util.Date date1 = null;
 		try {
@@ -70,10 +70,10 @@ public class LibriSpring {
 		}
 		java.sql.Date d1 = new Date(date1.getTime());
 		ModelAndView model = new ModelAndView();
-		Libri dipendente = new Libri(id,d1,numeroPagine,titolo,genere,autore,isbn,casaEditrice,posizione);
-		aggiornaLibri(dipendente);
+		Libri Libri = new Libri(id,d1,numeroPagine,titolo,genere,autore,isbn,casaEditrice,posizione);
+		aggiornaLibri(Libri);
 		List<Libri> l1 = ritornaListaLibri();
-		model.setViewName("/Biblioteca/Dipendente/ListaTuttiLibri");
+		model.setViewName("/Biblioteca/Libro/ListaTuttiLibri");
 		model.addObject("ListaLibri",l1);
 		return model;
 	}

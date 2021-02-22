@@ -7,8 +7,8 @@
 </head>
 <body>
 	<h1>Aggiorna un libro</h1>
-	<form action="LibriCtr" method="get">
-		<label>Id Libro</label><input type="text" name="idLibro" id="1" readonly/><br>
+	<form action="Modifica" method="get">
+		<label>Id Libro</label><input type="text" name="idlibro" id="1" readonly/><br>
 		<label>Anno di Stampa</label><input type="date" name="annoDiStampa" id="2" required><br>
 		<label>Numero Pagine</label><input type="text" name="numeroPagine" pattern="[0-9]{1,10}" id="3" required/><br>
 		<label>Titolo</label><input type="text" name="titolo" id="4" required/><br>
@@ -17,11 +17,10 @@
 		<label>ISBN</label><input type="text" name="ISBN" id="7" required/><br>
 		<label>Casa Editrice</label><input type="text" name="casaEditrice" id="8" required/><br>
 		<label>Posizione</label><input type="text" name="posizione" id="9" required/><br>
-		<input type="hidden" name="tipoOperazione" value="aggiornaLibri">
 		<button type="submit" class="inserisci">Aggiorna Libro!</button>
 	</form>
 	<br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 <script type="text/javascript">function getUrlParams() {
 
 	  var paramMap = {};
