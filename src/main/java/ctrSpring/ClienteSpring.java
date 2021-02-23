@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.ClientiDao;
@@ -25,7 +26,7 @@ public class ClienteSpring {
 	public String ListaClienti(ModelMap model) {
 		List<Clienti> l1 = ritornaListaClienti();
 		model.addAttribute("ListaClienti",l1);
-		return "/Biblioteca/Cliente/ListaTuttiClienti";
+		return "Biblioteca/Cliente/ListaTuttiClienti";
 
 	}
 	
@@ -39,10 +40,13 @@ public class ClienteSpring {
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Cliente/Inserisci", method = RequestMethod.POST)
-	public String inserisciClienti() {
-		
-		return "inserimento.html";
-
+	@ResponseBody
+	public ModelAndView inserisciClienti(String nome, String cognome, String codiceFiscale) {
+		ModelAndView model = new ModelAndView();
+		Clienti c = new Clienti(nome,cognome,codiceFiscale);
+		inserisciCliente(c);
+		model.setViewName("Inserimento");
+		return model;
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Cliente/Cancella", method = RequestMethod.GET)

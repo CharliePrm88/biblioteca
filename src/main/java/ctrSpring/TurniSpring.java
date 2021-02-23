@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.TurniDao;
@@ -40,10 +41,26 @@ public class TurniSpring {
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Turni/Inserisci", method = RequestMethod.POST)
-	public String inserisciTurni() {
-		
-		return "inserimento.html";
+	@ResponseBody
+	public ModelAndView inserisciTurni(String data_inizio, String data_fine, int matricola) {
+		ModelAndView model = new ModelAndView();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date data_inizio1 = null;
+		java.util.Date data_fine1= null;
+		try {
+			data_inizio1 = sdf.parse(data_inizio);
+			data_fine1= sdf.parse(data_fine);
 
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		java.sql.Date d1 = new Date(data_inizio1.getTime());
+		java.sql.Date d2 = new Date(data_fine1.getTime());
+		Turni Turno = new Turni(matricola,d1,d2);
+		inserisciTurni(Turno);
+		model.setViewName("Inserimento");
+		return model;
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Turni/Cancella", method = RequestMethod.GET)

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.RegistroLibriDao;
@@ -39,10 +40,28 @@ public class RegistroLibriSpring {
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Registro/Inserisci", method = RequestMethod.POST)
-	public String inserisciRegistroLibri() {
-		
-		return "inserimento.html";
-
+	@ResponseBody
+	public ModelAndView inserisciRegistroLibri(int idCliente,int idLibro,int matricola, String data_prestito, String data_scadenza, String data_rientro) {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("Inserimento");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date data_prestito1 = null;
+		java.util.Date data_scadenza1= null;
+		java.util.Date data_rientro1= null;
+		try {
+			data_prestito1 = sdf.parse(data_prestito);
+			data_scadenza1= sdf.parse(data_scadenza);
+			data_rientro1= sdf.parse(data_rientro);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		java.sql.Date d1 = new Date(data_prestito1.getTime());
+		java.sql.Date d2 = new Date(data_scadenza1.getTime());
+		java.sql.Date d3 = new Date(data_rientro1.getTime());
+		RegistroLibri registroLibri = new RegistroLibri(idLibro,idCliente,matricola,d1,d2,d3);
+		inserisciregendente(registroLibri);
+		return model;
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Registro/Cancella", method = RequestMethod.GET)

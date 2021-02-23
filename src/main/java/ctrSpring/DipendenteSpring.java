@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.DipendenteDao;
@@ -39,9 +40,13 @@ public class DipendenteSpring {
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Dipendente/Inserisci", method = RequestMethod.POST)
-	public String inserisciDipendenti() {
-		
-		return "inserimento.html";
+	@ResponseBody
+	public ModelAndView inserisciDipendenti(String nome, String cognome, String codiceFiscale) {
+		ModelAndView model = new ModelAndView();
+		Dipendenti d = new Dipendenti(nome,cognome,codiceFiscale);
+		inserisciDipendente(d);
+		model.setViewName("Inserimento");
+		return model;
 
 	}
 	

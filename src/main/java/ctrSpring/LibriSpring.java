@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.LibriDao;
@@ -41,10 +42,22 @@ public class LibriSpring {
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Libro/Inserisci", method = RequestMethod.POST)
-	public String inserisciLibri() {
-		
-		return "inserimento.html";
-
+	@ResponseBody
+	public ModelAndView inserisciLibri(String annoDiStampa,int numeroPagine,String titolo, String genere, String autore, String ISBN, String casaEditrice,String posizione) {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("Inserimento");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date date1 = null;
+		try {
+			date1 = sdf.parse(annoDiStampa);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		java.sql.Date d1 = new Date(date1.getTime());
+		Libri libri = new Libri(d1,numeroPagine,titolo,genere,autore,ISBN,casaEditrice,posizione);
+		inserisciLibri(libri);
+		return model;
 	}
 	
 	@RequestMapping(value = "/Biblioteca/Libro/Cancella", method = RequestMethod.GET)
@@ -70,8 +83,8 @@ public class LibriSpring {
 		}
 		java.sql.Date d1 = new Date(date1.getTime());
 		ModelAndView model = new ModelAndView();
-		Libri Libri = new Libri(id,d1,numeroPagine,titolo,genere,autore,isbn,casaEditrice,posizione);
-		aggiornaLibri(Libri);
+		Libri libri = new Libri(id,d1,numeroPagine,titolo,genere,autore,isbn,casaEditrice,posizione);
+		aggiornaLibri(libri);
 		List<Libri> l1 = ritornaListaLibri();
 		model.setViewName("/Biblioteca/Libro/ListaTuttiLibri");
 		model.addObject("ListaLibri",l1);

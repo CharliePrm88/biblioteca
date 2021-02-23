@@ -10,4 +10,9 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>/homepage.html</welcome-file>
   </welcome-file-list>
+  <servlet-mapping>
+  <servlet-name>jsp</servlet-name>
+  <url-pattern>*.jsp</url-pattern>
+  <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
 </web-app>
