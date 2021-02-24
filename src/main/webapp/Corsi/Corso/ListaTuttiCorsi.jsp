@@ -17,14 +17,13 @@
 <c:forEach var="c" items="${ListaCorsi}">
 
 <tr>
-	<td><form action="CorsiCtr">
+	<td><form action="Cancella">
 	<input type="text" name="id" value="${c.getId()}" readonly/>
 	<input type="text" name="nome" value="${c.getNome()}" readonly/>
 	<input type="text" name="data_inizio" value="<fmt:formatDate value="${c.getData_inizio()}" pattern="yyyy-MM-dd"/>
 	" readonly/>
 	<input type="text" name="data_fine" value="<fmt:formatDate value="${c.getData_fine()}" pattern="yyyy-MM-dd"/>
 	" readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaCorsi">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
@@ -39,6 +38,6 @@
 </tr>
 </c:forEach>
 </table><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 </body>
 </html>

@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>Inserisci un'iscrizione</h1>
-	<form action="FrequentaCtr" method="get">
+	<form action="Inserisci" method="post">
 		
 		<label>Id</label><input type="text" name="id" required/><br>		
 		
@@ -38,7 +38,7 @@
 		<button type="submit" class="inserisci" value="Inserisci Frequenta!">Inserisci iscrizione!</button>
 	</form>
 	<br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 
 </body>
 </html>

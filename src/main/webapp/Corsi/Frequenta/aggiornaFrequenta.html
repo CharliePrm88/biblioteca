@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Aggiorna un iscrizione a un corso</h1>
-	<form action="FrequentaCtr" method="get">
+	<form action="Modifica" method="post">
 		<label>Id</label><input type="text" name="id" id="1" readonly/><br>
 		<label>Id Corso</label><input type="text" name="idCorso" id="2" pattern="[0-9]{1,10}" required/><br>		
 		<label>Id Dipendente</label><input type="text" name="idDipendente" id="3" required><br>
@@ -16,7 +16,7 @@
 		<input type="hidden" name="tipoOperazione" value="aggiornaFrequenta">
 		<button type="submit" class="inserisci">Aggiorna iscrizione!</button>
 	</form><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 <script type="text/javascript">function getUrlParams() {
 
 	  var paramMap = {};

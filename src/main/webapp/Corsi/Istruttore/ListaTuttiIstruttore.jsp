@@ -16,12 +16,11 @@
 <table>
 <c:forEach var="c" items="${ListaIstruttore}">
 <tr>
-	<td><form action="IstruttoreCtr">
+	<td><form action="Cancella">
 	<input type="text" name="matricola" value="${c.getMatricola()}" readonly/>
 	<input type="text" name="nome" value="${c.getNome()}" readonly/>
 	<input type="text" name="cognome" value="${c.getCognome()}" readonly/>
 	<input type="text" name="codiceFiscale" value="${c.getCodiceFiscale()}" readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaIstruttore">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
@@ -36,6 +35,6 @@
 </tr>
 </c:forEach>
 </table><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 </body>
 </html>

@@ -16,12 +16,11 @@
 <table>
 <c:forEach var="c" items="${ListaFrequenta}">
 <tr>
-	<td><form action="FrequentaCtr">
+	<td><form action="Cancella">
 	<input type="text" name="id" value="${c.getId()}" readonly/>
 	<input type="text" name="idCorso" value="${c.getIdCorso()}" readonly/>
 	<input type="text" name="idDipendente" value="${c.getIdDipendente()}" readonly/>
 	<input type="text" name="idIstruttore" value="${c.getIdIstruttore()}" readonly/>
-	<input type="hidden" name="tipoOperazione" value="cancellaFrequenta">
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
@@ -36,6 +35,6 @@
 </tr>
 </c:forEach>
 </table><br>
-	<a href=/biblioteca>Torna alla homepage</a>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
 </body>
 </html>

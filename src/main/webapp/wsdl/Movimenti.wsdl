@@ -233,7 +233,7 @@
   </wsdl:binding>
   <wsdl:service name="MovimentiCtrService">
     <wsdl:port binding="tns:MovimentiCtrServiceSoapBinding" name="MovimentiCtrPort">
-      <soap:address location="http://localhost:8080/ewallet/MovimentiCtr"/>
+      <soap:address location="http://localhost:8080/ewallet-0.0.1-SNAPSHOT/MovimentiCtr"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

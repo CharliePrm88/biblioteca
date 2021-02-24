@@ -7,13 +7,11 @@
 </head>
 <body>
 <h1>Aggiorna Corso</h1>
-	<form action="CorsiCtr" method="get">
+	<form action="Modifica" method="post">
 		<label>ID Corso</label><input type="text" name="id" id="1" pattern="[0-9]{1,30}" required/><br>
 		<label>Titolo del Corso</label><input type="text" name="nome" id="2" required/><br>
 		<label>Data inizio</label><input type="date" name="data_inizio" id="3" required><br>
 		<label>Data fine</label><input type="date" name="data_fine" id="4" required><br>
-		
-		<input type="hidden" name="tipoOperazione" value="aggiornaCorsi">
 		<button type="submit" class="inserisci">Aggiorna Corso!</button>
 	</form>
 	

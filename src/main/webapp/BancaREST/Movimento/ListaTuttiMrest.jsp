@@ -27,7 +27,7 @@
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
-	<form action="aggiornaM.html">
+	<form action="aggiornaMrest.html">
 	<input type="hidden" name="data_movimento" value="<fmt:formatDate value="${c.getData_movimento()}" pattern="yyyy-MM-dd"/>" readonly/>
 	<input type="hidden" name="iban" value="${c.getIban()}" readonly/>
 	<input type="hidden" name="id" value="${c.getId()}" readonly/>
