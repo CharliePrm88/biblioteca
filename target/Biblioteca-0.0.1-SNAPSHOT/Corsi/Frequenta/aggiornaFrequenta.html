@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../../style.css">
+<meta charset="ISO-8859-1">
+<title>Aggiorna l'iscrizione</title>
+</head>
+<body>
+	<h1>Aggiorna un iscrizione a un corso</h1>
+	<form action="Modifica" method="post">
+		<label>Id</label><input type="text" name="id" id="1" readonly/><br>
+		<label>Id Corso</label><input type="text" name="idCorso" id="2" pattern="[0-9]{1,10}" required/><br>		
+		<label>Id Dipendente</label><input type="text" name="idDipendente" id="3" required><br>
+		<label>Id Istruttore</label><input type="text" name="idIstruttore" id="4" required><br>
+		
+		<input type="hidden" name="tipoOperazione" value="aggiornaFrequenta">
+		<button type="submit" class="inserisci">Aggiorna iscrizione!</button>
+	</form><br>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
+<script type="text/javascript">function getUrlParams() {
+
+	  var paramMap = {};
+	  if (location.search.length == 0) {
+	    return paramMap;
+	  }
+	  var parts = location.search.substring(1).split("&");
+
+	  for (var i = 0; i < parts.length; i ++) {
+	    var component = parts[i].split("=");
+	    paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+	  }
+	  return paramMap;
+	}
+var params = getUrlParams();
+document.getElementById('1').value = params.id.replace("/","");
+document.getElementById('2').value = params.idCorso;
+document.getElementById('3').value = params.idDipendente;
+document.getElementById('4').value = params.idIstruttore;
+</script>
+</body>
+</html>

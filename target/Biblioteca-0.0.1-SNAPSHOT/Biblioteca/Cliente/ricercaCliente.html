@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="../../style.css">
+<title>Ricerca Cliente per Id</title>
+</head>
+<body>
+<form action="Ritorna" method="get">
+	<label>Inserisci l'ID del cliente </label><input type="text" name="idCliente"required/><br>
+	<input type="hidden" name="tipoOperazione" value="ritornaClienti">
+<button type="submit" class="inserisci" value="Ricerca Cliente!">Ricerca Cliente!</button>
+</form>
+
+<form action="Lista" method="get">
+	<input type="hidden" name="tipoOperazione" value="ritornaListaClienti">
+<button type="submit" class="inserisci" value="Ricerca TUTTI i clienti">Ricerca TUTTI i clienti</button>
+</form><br>
+	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>
+</body>
+</html>

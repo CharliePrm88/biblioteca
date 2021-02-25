@@ -26,7 +26,7 @@
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
-	<form action="aggiornaCC.html">
+	<form action="aggiornaCCrest.html">
 	<input type="hidden" name="data_creazione" value="<fmt:formatDate value="${c.getData_creazione()}" pattern="yyyy-MM-dd"/>" readonly/>
 	<input type="hidden" name="iban" value="${c.getIban()}" readonly/>
 	<input type="hidden" name="saldo" value="${c.getSaldo()}" readonly/>

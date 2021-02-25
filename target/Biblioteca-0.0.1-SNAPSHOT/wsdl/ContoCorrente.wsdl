@@ -232,7 +232,7 @@
   </wsdl:binding>
   <wsdl:service name="ContoCorrenteCtrService">
     <wsdl:port binding="tns:ContoCorrenteCtrServiceSoapBinding" name="ContoCorrenteCtrPort">
-      <soap:address location="http://localhost:8080/ewallet/ContoCorrenteCtr"/>
+      <soap:address location="http://localhost:8080/ewallet-0.0.1-SNAPSHOT/ContoCorrenteCtr"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

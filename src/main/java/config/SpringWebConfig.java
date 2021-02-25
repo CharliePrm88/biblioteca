@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "ctrSpring","ctrCorsiSpring","ctrBancaRESTSpring" })
+@ComponentScan({ "ctrSpring","ctrCorsiSpring","ctrBancaRESTSpring","ctrBancaSpring" })
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
  
 	@Override

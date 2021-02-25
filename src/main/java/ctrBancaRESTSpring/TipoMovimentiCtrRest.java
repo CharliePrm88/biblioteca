@@ -39,7 +39,7 @@ public class TipoMovimentiCtrRest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "BancaREST/ContoCorrente/ListaTuttiTM";
+		return "BancaREST/ContoCorrente/ListaTuttiTMrest";
 	}
 	
 	@RequestMapping(value = "/BancaREST/TipoMovimento/Ritorna", method = RequestMethod.GET)
@@ -64,7 +64,7 @@ public class TipoMovimentiCtrRest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		model.setViewName("BancaREST/TipoMovimento/ritornaTM");
+		model.setViewName("BancaREST/TipoMovimento/ritornaTMrest");
 		return model;
 	}
 	
@@ -166,7 +166,7 @@ public class TipoMovimentiCtrRest {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		model.setViewName("/BancaREST/TipoMovimento/ListaTuttiTM");
+		model.setViewName("/BancaREST/TipoMovimento/ListaTuttiTMrest");
 		return model;
 	}
 }

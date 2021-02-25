@@ -58,7 +58,7 @@ public class ContoCorrenteCtrRest {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		return "BancaREST/ContoCorrente/ListaTuttiCC";
+		return "BancaREST/ContoCorrente/ListaTuttiCCrest";
 	}
 	
 	@RequestMapping(value = "/BancaREST/ContoCorrente/Ritorna", method = RequestMethod.GET)
@@ -78,7 +78,7 @@ public class ContoCorrenteCtrRest {
 			ResponseContoCorrente result = mapper.readValue(output, ResponseContoCorrente.class);
 			ContoCorrente cc2 = result.getCc();
 			model.addObject("CC", cc2);
-			model.setViewName("BancaREST/ContoCorrente/ritornaCC");
+			model.setViewName("BancaREST/ContoCorrente/ritornaCCrest");
 		} catch (Exception e) {
 			e.printStackTrace();
 		  }
@@ -160,7 +160,7 @@ public class ContoCorrenteCtrRest {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-		model.setViewName("/BancaREST/ContoCorrente/ListaTuttiCC");
+		model.setViewName("/BancaREST/ContoCorrente/ListaTuttiCCrest");
 		return model;
 	}
 	@RequestMapping(value = "/BancaREST/ContoCorrente/Modifica", method = RequestMethod.POST)
@@ -206,7 +206,7 @@ public class ContoCorrenteCtrRest {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	model.setViewName("/BancaREST/ContoCorrente/ListaTuttiCC");
+	model.setViewName("/BancaREST/ContoCorrente/ListaTuttiCCrest");
 	return model;
 	}
 }

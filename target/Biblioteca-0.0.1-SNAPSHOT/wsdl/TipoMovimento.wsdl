@@ -230,7 +230,7 @@
   </wsdl:binding>
   <wsdl:service name="TipoMovimentoCtrService">
     <wsdl:port binding="tns:TipoMovimentoCtrServiceSoapBinding" name="TipoMovimentoCtrPort">
-      <soap:address location="http://localhost:8080/ewallet/TipoMovimentoCtr"/>
+      <soap:address location="http://localhost:8080/ewallet-0.0.1-SNAPSHOT/TipoMovimentoCtr"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

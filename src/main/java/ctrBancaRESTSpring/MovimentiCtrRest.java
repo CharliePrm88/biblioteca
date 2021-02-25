@@ -73,7 +73,7 @@ public class MovimentiCtrRest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		model.setViewName("BancaREST/Movimento/ritornaM");
+		model.setViewName("BancaREST/Movimento/ritornaMrest");
 		return model;
 	}
 	@RequestMapping(value = "/BancaREST/Movimento/Inserisci", method = RequestMethod.POST)
@@ -145,7 +145,7 @@ public class MovimentiCtrRest {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		model.setViewName("/BancaREST/Movimento/ListaTuttiM");
+		model.setViewName("/BancaREST/Movimento/ListaTuttiMrest");
 		return model;
 	}
 	
@@ -192,7 +192,7 @@ public class MovimentiCtrRest {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		model.setViewName("/BancaREST/Movimento/ListaTuttiM");
+		model.setViewName("/BancaREST/Movimento/ListaTuttiMrest");
 		return model;
 	}
 	
