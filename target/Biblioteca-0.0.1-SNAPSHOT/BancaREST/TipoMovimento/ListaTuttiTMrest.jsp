@@ -22,7 +22,7 @@
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
-	<form action="aggiornaTM.html">
+	<form action="aggiornaTMrest.html">
 	<input type="hidden" name="descrizione" value="${c.getDescrizione()}" readonly/>	
 	<input type="hidden" name="idTipoMovimento" value="${c.getId_tipo_movimento()}" readonly/>
 	<button type="submit" class="inserisci">Modifica</button>

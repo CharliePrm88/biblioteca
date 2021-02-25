@@ -22,7 +22,7 @@ public class MovimentiCtrServiceLocator extends org.apache.axis.client.Service i
     }
 
     // Use to get a proxy class for MovimentiCtrPort
-    private java.lang.String MovimentiCtrPort_address = "http://localhost:8080/ewallet/MovimentiCtr";
+    private java.lang.String MovimentiCtrPort_address = "http://localhost:8080/ewalletMaven-0.0.1-SNAPSHOT/MovimentiCtr";
 
     public java.lang.String getMovimentiCtrPortAddress() {
         return MovimentiCtrPort_address;

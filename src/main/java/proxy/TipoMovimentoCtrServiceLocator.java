@@ -22,7 +22,7 @@ public class TipoMovimentoCtrServiceLocator extends org.apache.axis.client.Servi
     }
 
     // Use to get a proxy class for TipoMovimentoCtrPort
-    private java.lang.String TipoMovimentoCtrPort_address = "http://localhost:8080/ewallet/TipoMovimentoCtr";
+    private java.lang.String TipoMovimentoCtrPort_address = "http://localhost:8080/ewalletMaven-0.0.1-SNAPSHOT/TipoMovimentoCtr";
 
     public java.lang.String getTipoMovimentoCtrPortAddress() {
         return TipoMovimentoCtrPort_address;

@@ -22,7 +22,7 @@ public class ContoCorrenteCtrServiceLocator extends org.apache.axis.client.Servi
     }
 
     // Use to get a proxy class for ContoCorrenteCtrPort
-    private java.lang.String ContoCorrenteCtrPort_address = "http://localhost:8080/ewallet/ContoCorrenteCtr";
+    private java.lang.String ContoCorrenteCtrPort_address = "http://localhost:8080/ewalletMaven-0.0.1-SNAPSHOT/ContoCorrenteCtr";
 
     public java.lang.String getContoCorrenteCtrPortAddress() {
         return ContoCorrenteCtrPort_address;
