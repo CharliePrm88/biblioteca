@@ -1,36 +1,36 @@
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ctr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="MovimentiCtrService" targetNamespace="http://ctr/">
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ctr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="MovimentiCtrService" targetNamespace="http://ctr/">
   <wsdl:types>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ctr/" elementFormDefault="unqualified" targetNamespace="http://ctr/" version="1.0">
 
-  <xs:element name="cancellaM" type="tns:cancellaM"/>
+  <xs:element name="cancellaM" type="tns:cancellaM"></xs:element>
 
-  <xs:element name="cancellaMResponse" type="tns:cancellaMResponse"/>
+  <xs:element name="cancellaMResponse" type="tns:cancellaMResponse"></xs:element>
 
-  <xs:element name="inserisciM" type="tns:inserisciM"/>
+  <xs:element name="inserisciM" type="tns:inserisciM"></xs:element>
 
-  <xs:element name="inserisciMResponse" type="tns:inserisciMResponse"/>
+  <xs:element name="inserisciMResponse" type="tns:inserisciMResponse"></xs:element>
 
-  <xs:element name="modificaM" type="tns:modificaM"/>
+  <xs:element name="modificaM" type="tns:modificaM"></xs:element>
 
-  <xs:element name="modificaMResponse" type="tns:modificaMResponse"/>
+  <xs:element name="modificaMResponse" type="tns:modificaMResponse"></xs:element>
 
-  <xs:element name="ritornaListaM" type="tns:ritornaListaM"/>
+  <xs:element name="ritornaListaM" type="tns:ritornaListaM"></xs:element>
 
-  <xs:element name="ritornaListaMResponse" type="tns:ritornaListaMResponse"/>
+  <xs:element name="ritornaListaMResponse" type="tns:ritornaListaMResponse"></xs:element>
 
-  <xs:element name="ritornaM" type="tns:ritornaM"/>
+  <xs:element name="ritornaM" type="tns:ritornaM"></xs:element>
 
-  <xs:element name="ritornaMResponse" type="tns:ritornaMResponse"/>
+  <xs:element name="ritornaMResponse" type="tns:ritornaMResponse"></xs:element>
 
   <xs:complexType name="ritornaM">
     <xs:sequence>
-      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg0" type="xs:int"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="ritornaMResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"/>
+      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -38,8 +38,8 @@
     <xs:complexContent>
       <xs:extension base="tns:response">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="l1" nillable="true" type="tns:movimenti"/>
-          <xs:element minOccurs="0" name="m" type="tns:movimenti"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="l1" nillable="true" type="tns:movimenti"></xs:element>
+          <xs:element minOccurs="0" name="m" type="tns:movimenti"></xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -47,65 +47,65 @@
 
   <xs:complexType name="response">
     <xs:sequence>
-      <xs:element minOccurs="0" name="description" type="xs:string"/>
-      <xs:element name="errorCode" type="xs:int"/>
-      <xs:element minOccurs="0" name="result" type="xs:string"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"></xs:element>
+      <xs:element name="errorCode" type="xs:int"></xs:element>
+      <xs:element minOccurs="0" name="result" type="xs:string"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="movimenti">
     <xs:sequence>
-      <xs:element minOccurs="0" name="data_movimento" type="xs:dateTime"/>
-      <xs:element name="iban" type="xs:int"/>
-      <xs:element name="id" type="xs:int"/>
-      <xs:element name="id_tipo_movimento" type="xs:int"/>
-      <xs:element name="importo" type="xs:float"/>
+      <xs:element minOccurs="0" name="data_movimento" type="xs:dateTime"></xs:element>
+      <xs:element name="iban" type="xs:int"></xs:element>
+      <xs:element name="id" type="xs:int"></xs:element>
+      <xs:element name="id_tipo_movimento" type="xs:int"></xs:element>
+      <xs:element name="importo" type="xs:float"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="inserisciM">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:movimenti"/>
+      <xs:element minOccurs="0" name="arg0" type="tns:movimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="inserisciMResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"/>
+      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="modificaM">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:movimenti"/>
+      <xs:element minOccurs="0" name="arg0" type="tns:movimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="modificaMResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"/>
+      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="cancellaM">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:movimenti"/>
+      <xs:element minOccurs="0" name="arg0" type="tns:movimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="cancellaMResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"/>
+      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="ritornaListaM">
-    <xs:sequence/>
+    <xs:sequence></xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="ritornaListaMResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"/>
+      <xs:element minOccurs="0" name="return" type="tns:responseMovimenti"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -184,56 +184,56 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MovimentiCtrServiceSoapBinding" type="tns:MovimentiCtr">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
     <wsdl:operation name="ritornaM">
-      <soap:operation soapAction="" style="document"/>
+      <soap:operation soapAction="" style="document"></soap:operation>
       <wsdl:input name="ritornaM">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:input>
       <wsdl:output name="ritornaMResponse">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="inserisciM">
-      <soap:operation soapAction="" style="document"/>
+      <soap:operation soapAction="" style="document"></soap:operation>
       <wsdl:input name="inserisciM">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:input>
       <wsdl:output name="inserisciMResponse">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="modificaM">
-      <soap:operation soapAction="" style="document"/>
+      <soap:operation soapAction="" style="document"></soap:operation>
       <wsdl:input name="modificaM">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:input>
       <wsdl:output name="modificaMResponse">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="cancellaM">
-      <soap:operation soapAction="" style="document"/>
+      <soap:operation soapAction="" style="document"></soap:operation>
       <wsdl:input name="cancellaM">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:input>
       <wsdl:output name="cancellaMResponse">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ritornaListaM">
-      <soap:operation soapAction="" style="document"/>
+      <soap:operation soapAction="" style="document"></soap:operation>
       <wsdl:input name="ritornaListaM">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:input>
       <wsdl:output name="ritornaListaMResponse">
-        <soap:body use="literal"/>
+        <soap:body use="literal"></soap:body>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="MovimentiCtrService">
     <wsdl:port binding="tns:MovimentiCtrServiceSoapBinding" name="MovimentiCtrPort">
-      <soap:address location="http://localhost:8080/ewallet-0.0.1-SNAPSHOT/MovimentiCtr"/>
+      <soap:address location="http://localhost:8080/ewalletMaven-0.0.1-SNAPSHOT/MovimentiCtr"></soap:address>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
