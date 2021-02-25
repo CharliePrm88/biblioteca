@@ -17,7 +17,7 @@
 <c:forEach var="c" items="${listaM}">
 
 <tr>
-	<td><form action="Cancella">
+	<td><form action="Cancella" method="post">
 	<input type="text" name="data_movimento" value="<fmt:formatDate value="${c.getData_movimento()}" pattern="yyyy-MM-dd"/>
 	" readonly/>
 	<input type="text" name="id" value="${c.getId()}" readonly/>

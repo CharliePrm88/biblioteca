@@ -48,7 +48,7 @@ public class MovimentiCtrRest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	return "BancaREST/Movimenti/ListaTuttiMrest";
+	return "BancaREST/Movimento/ListaTuttiMrest";
 	}
 	
 	@RequestMapping(value = "/BancaREST/Movimento/Ritorna", method = RequestMethod.GET)

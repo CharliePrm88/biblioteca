@@ -47,9 +47,8 @@ public class FrequentaCtr {
 		return model;
 	}
     
-    @RequestMapping(value = "/Corsi/Frequenta/PreInserisci", method = RequestMethod.POST)
-	@ResponseBody
-	public ModelAndView preinserisciFrequenta(int id, int idCorso,int idDipendente, int idIstruttore) {
+    @RequestMapping(value = "/Corsi/Frequenta/PreInserisci", method = RequestMethod.GET)
+	public ModelAndView preinserisciFrequenta() {
 		ModelAndView model = new ModelAndView();
 		List<CorsiDto> lc = cer.ritornaListaCorsi();
 		List<IstruttoreDto> li = ier.ritornaListaIstruttore();
