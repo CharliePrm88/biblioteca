@@ -5,12 +5,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>3.2.13.RELEASE</spring.version>
 		<jstl.version>1.2</jstl.version>
+		<jdbc.version>8.0.20</jdbc.version>
 		<servletapi.version>3.1.0</servletapi.version>
+		<hibernate.version>4.1.9.Final</hibernate.version>
 	</properties>
   <name>Biblioteca</name>
   <dependencies>
@@ -23,7 +23,7 @@
 <dependency>
     <groupId>javax</groupId>
     <artifactId>javaee-api</artifactId>
-    <version>7.0</version>
+    <version>8.0.1</version>
 </dependency>
 
 <dependency>
@@ -132,6 +132,56 @@
     <artifactId>jaxws-maven-plugin</artifactId>
     <version>2.4</version>
 </dependency>
+<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+			
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${jdbc.version}</version>
+		</dependency>
+		
+				<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>${hibernate.version}</version>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>cglib</groupId>
+		            <artifactId>cglib</artifactId>
+		        </exclusion>
+		        <exclusion>
+		            <groupId>dom4j</groupId>
+		            <artifactId>dom4j</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
         
   </dependencies>
   <build>

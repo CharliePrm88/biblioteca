@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@page import="java.util.ArrayList" %>
-<%@page import="model.Dipendenti" %>
+<%@page import="entity.Dipendenti" %>
 <%@page import="java.util.List" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>

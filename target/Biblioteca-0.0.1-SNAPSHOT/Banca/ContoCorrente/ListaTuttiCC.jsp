@@ -17,7 +17,7 @@
 <c:forEach var="c" items="${listaCC}">
 
 <tr>
-	<td><form action="Cancella">
+	<td><form action="Cancella" method="post">
 	<input type="text" name="data_creazione" value="<fmt:formatDate value="${c.getData_creazione()}" pattern="yyyy-MM-dd"/>
 	" readonly/>
 	<input type="text" name="iban" value="${c.getIban()}" readonly/>

@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.util.ArrayList" %>
-<%@page import="model.Clienti" %>
+<%@page import="entity.Clienti" %>
 <%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html>

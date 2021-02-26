@@ -16,7 +16,7 @@
 <c:forEach var="c" items="${listaTM}">
 
 <tr>
-	<td><form action="Cancella">
+	<td><form action="Cancella" method="post">
 	<input type="text" name="idTipoMovimento" value="${c.getId_tipo_movimento()}" readonly/>
 	<input type="text" name="descrizione" value="${c.getDescrizione()}" readonly/>
 	<button type="submit" class="rimuovi">Cancella</button>
