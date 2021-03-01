@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@page import="entity.Turni" %>
+<%@page import="entity.Dipendenti" %>
 <%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -18,17 +19,17 @@
 <tr>
 	<td><form action="Cancella">
 	<input type="text" name="idturno" value="${c.getId()}" readonly/>
-	<input type="text" name="matricola" value="${c.getMatricola()}" readonly/>
-	<input type="text" name="data_inizio_turno" value="${c.getData_inizio_turno()}" readonly/>
-	<input type="text" name="data_fine_turno"value="${c.getData_fine_turno()}" readonly/>
+	<input type="text" name="matricola" value="${c.getDipendenti().getMatricola()}" readonly/>
+	<input type="text" name="data_inizio_turno" value="${c.getDataInizioTurno()}" readonly/>
+	<input type="text" name="data_fine_turno"value="${c.getDataFineTurno()}" readonly/>
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
 	<form action="aggiornaTurni.html">
 	<input type="hidden" name="idturno" value="${c.getId()}"/>
-	<input type="hidden" name="matricola" value="${c.getMatricola()}" readonly/>
-	<input type="hidden" name="data_inizio"value="${c.getData_inizio_turno()}" readonly/>
-	<input type="hidden" name="data_fine"value="${c.getData_fine_turno()}" readonly/>
+	<input type="hidden" name="matricola" value="${c.getDipendenti().getMatricola()}" readonly/>
+	<input type="hidden" name="data_inizio"value="${c.getDataInizioTurno()}" readonly/>
+	<input type="hidden" name="data_fine"value="${c.getDataFineTurno()}" readonly/>
 	<button type="submit" class="inserisci">Modifica</button>
 	</form>
 	</td>

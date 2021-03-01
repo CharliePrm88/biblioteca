@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @Configuration
 //@EntityScan({"entity"})
-@ComponentScan({ "ctr","service","repository","entity","ctrCorsiSpring","ctrBancaRESTSpring","ctrBancaSpring"})
+@ComponentScan({ "ctr", "ctrRest","service","repository","entity","ctrCorsiSpring","ctrBancaRESTSpring","ctrBancaSpring"})
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
  
 	@Override

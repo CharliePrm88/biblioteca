@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="entity.Turni" %>
+<%@page import="entity.Dipendenti" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +15,9 @@
 <% Turni c = (Turni)request.getAttribute("Turni");%>
         <tr>
         <td> <%=c.getId()%></td>
-        <td><%=c.getMatricola()%> </td>
-        <td><%=c.getData_inizio_turno() %></td>
-        <td><%=c.getData_fine_turno() %></td>
+        <td><%=c.getDipendenti().getMatricola()%> </td>
+        <td><%=c.getDataInizioTurno() %></td>
+        <td><%=c.getDataFineTurno() %></td>
         </tr>
 </table><br>
 	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>

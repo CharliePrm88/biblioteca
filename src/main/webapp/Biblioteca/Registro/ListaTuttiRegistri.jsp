@@ -2,7 +2,10 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<%@page import="entity.RegistroLibri" %>
+<%@page import="entity.Registrolibri" %>
+<%@page import="entity.Libri" %>
+<%@page import="entity.Dipendenti" %>
+<%@page import="entity.Clienti" %>
 <%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -18,23 +21,23 @@
 <tr>
 	<td><form action="Cancella">
 	<input type="text" name="id" value="${c.getId()}" readonly/>
-	<input type="text" name="idLibro" value="${c.getIdlibro()}" readonly/>
-	<input type="text" name="idCliente" value="${c.getIdcliente()}" readonly/>
-	<input type="text" name="matricola" value="${c.getMatricola()}" readonly/>
-	<input type="text" name="data_prestito" value="${c.getData_prestito()}" readonly/>
-	<input type="text" name="data_scadenza" value="${c.getData_scadenza()}" readonly/>
-	<input type="text" name="data_rientro" value="${c.getData_rientro()}" readonly/>
+	<input type="text" name="idLibro" value="${c.getLibri().getIdLibro()}" readonly/>
+	<input type="text" name="idCliente" value="${c.getClienti().getIdCliente()}" readonly/>
+	<input type="text" name="matricola" value="${c.getDipendenti().getMatricola()}" readonly/>
+	<input type="text" name="data_prestito" value="${c.getDataPrestito()}" readonly/>
+	<input type="text" name="data_scadenza" value="${c.getDataScadenza()}" readonly/>
+	<input type="text" name="data_rientro" value="${c.getDataRientro()}" readonly/>
 	<button type="submit" class="rimuovi">Cancella</button>
 	</form>
 	</td><td>
 	<form action="aggiornaRegistro.html">
 	<input type="hidden" name="id" value="${c.getId()}"/>
-	<input type="hidden" name="idLibro" value="${c.getIdlibro()}" readonly/>
-	<input type="hidden" name="idcliente" value="${c.getIdcliente()}" readonly/>
-	<input type="hidden" name="matricola" value="${c.getMatricola()}" readonly/>
-	<input type="hidden" name="data_prestito"value="${c.getData_prestito()}" readonly/>
-	<input type="hidden" name="data_scadenza"value="${c.getData_scadenza()}" readonly/>
-	<input type="hidden" name="data_rientro"value="${c.getData_rientro()}" readonly/>
+	<input type="hidden" name="idLibro" value="${c.getLibri().getIdLibro()}" readonly/>
+	<input type="hidden" name="idcliente" value="${c.getClienti().getIdCliente()}" readonly/>
+	<input type="hidden" name="matricola" value="${c.getDipendenti().getMatricola()}" readonly/>
+	<input type="hidden" name="data_prestito"value="${c.getDataPrestito()}" readonly/>
+	<input type="hidden" name="data_scadenza"value="${c.getDataScadenza()}" readonly/>
+	<input type="hidden" name="data_rientro"value="${c.getDataRientro()}" readonly/>
 	<button type="submit" class="inserisci">Modifica</button>
 	</form>
 	</td>

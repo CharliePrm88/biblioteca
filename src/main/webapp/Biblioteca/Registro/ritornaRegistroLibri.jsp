@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="entity.RegistroLibri" %>
+<%@page import="entity.Registrolibri" %>
+<%@page import="entity.Libri" %>
+<%@page import="entity.Dipendenti" %>
+<%@page import="entity.Clienti" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,14 +14,19 @@
 <body>
 <h3> Prestito </h3>
 	<table border="1px">
-<% RegistroLibri c = (RegistroLibri)request.getAttribute("RegistroLibri");%>
+<% Registrolibri r = (Registrolibri)request.getAttribute("RegistroLibri");%>
+<% Dipendenti d = r.getDipendenti();%>
+<% Libri l = r.getLibri();%>
+<% Clienti c = r.getClienti();%>
+
         <tr>
-        <td> <%=c.getId()%></td>
-        <td><%=c.getMatricola()%> </td>
-         <td><%=c.getIdlibro()%> </td>
-        <td><%=c.getData_prestito() %></td>
-        <td><%=c.getData_scadenza() %></td>
-         <td><%=c.getData_rientro()%> </td>
+        <td> <%=r.getId()%></td>
+        <td><%=c.getCognome() %> </td>
+         <td><%=l.getTitolo() %> </td>
+         <td><%=d.getMatricola() %></td>
+        <td><%=r.getDataPrestito() %></td>
+        <td><%=r.getDataScadenza() %></td>
+         <td><%=r.getDataRientro()%> </td>
         </tr>
 </table><br>
 	<a href=/Biblioteca-0.0.1-SNAPSHOT>Torna alla homepage</a>

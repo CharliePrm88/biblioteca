@@ -39,7 +39,7 @@ public class LibriSpring {
 	public ModelAndView ritornaLibro(@RequestParam(value="idLibro",required = true,defaultValue ="0") int id) {
 		ModelAndView model = new ModelAndView();
 		Libri Libri = ls.ritornaLibri(id);
-		model.setViewName("Biblioteca/Libri/ritornaLibri");
+		model.setViewName("Biblioteca/Libri/ritornaLibro");
 		model.addObject("Libri", Libri);
 		return model;
 	}

@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <properties>
 		<jdk.version>1.8</jdk.version>
-		<spring.version>3.2.13.RELEASE</spring.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
 		<jstl.version>1.2</jstl.version>
 		<jdbc.version>8.0.20</jdbc.version>
 		<servletapi.version>3.1.0</servletapi.version>
@@ -108,6 +108,13 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
+		<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+		
 
 		<dependency>
 			<groupId>javax.servlet</groupId>

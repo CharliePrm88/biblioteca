@@ -13,13 +13,13 @@
 	<table border="1px">
 <% Libri c = (Libri)request.getAttribute("Libri");%>
         <tr>
-        <td> <%=c.getIdlibro()%></td>
+        <td> <%=c.getIdLibro()%></td>
         <td><%=c.getNumeroPagine()%> </td>
         <td> <%=c.getTitolo()%></td>
         <td> <%=c.getGenere()%></td>
         <td> <%=c.getAutore()%></td>
-        <td> <%=c.getISBN() %></td>
-        <td> <%=c.getCasaEditrice()%></td>
+        <td> <%=c.getIsbn()%></td>
+        <td> <%=c.getCasaeditrice()%></td>
         <td> <%=c.getPosizione()%></td>
         </tr>
 </table><br>

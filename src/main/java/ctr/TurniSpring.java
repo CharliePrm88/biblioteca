@@ -23,7 +23,8 @@ import service.DipendentiService;
 @Controller
 public class TurniSpring {
 	@Autowired
-	private TurniService ts;   
+	private TurniService ts;
+	@Autowired
 	private DipendentiService ds;
 	
 	@RequestMapping(value = "/Biblioteca/Turni/Lista", method = RequestMethod.GET)
