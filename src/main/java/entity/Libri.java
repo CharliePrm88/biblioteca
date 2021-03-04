@@ -2,6 +2,9 @@ package entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import java.util.List;
 
@@ -37,6 +40,7 @@ public class Libri implements Serializable {
 
 	//bi-directional many-to-one association to Registrolibri
 	@OneToMany(mappedBy="libri")
+	@JsonIgnore
 	private List<Registrolibri> registrolibris;
 
 	public Libri() {

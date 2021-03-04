@@ -18,7 +18,6 @@ public class ClientiService {
 	
 	@Transactional
 	public void inserisciClienti(Clienti c) {
-		
 		cr.insertClienti(c);
 		
 	}

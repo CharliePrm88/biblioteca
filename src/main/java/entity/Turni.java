@@ -2,6 +2,9 @@ package entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 
 
@@ -28,6 +31,7 @@ public class Turni implements Serializable {
 	//bi-directional many-to-one association to Dipendenti
 	@ManyToOne
 	@JoinColumn(name="matricola")
+	@JsonIgnore
 	private Dipendenti dipendenti;
 
 	public Turni() {

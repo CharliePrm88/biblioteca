@@ -2,6 +2,9 @@ package entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 
 
@@ -32,16 +35,19 @@ public class Registrolibri implements Serializable {
 	//bi-directional many-to-one association to Clienti
 	@ManyToOne
 	@JoinColumn(name="idcliente")
+	@JsonIgnore
 	private Clienti clienti;
 
 	//bi-directional many-to-one association to Dipendenti
 	@ManyToOne
 	@JoinColumn(name="matricola")
+	@JsonIgnore
 	private Dipendenti dipendenti;
 
 	//bi-directional many-to-one association to Libri
 	@ManyToOne
 	@JoinColumn(name="idlibro")
+	@JsonIgnore
 	private Libri libri;
 
 	public Registrolibri() {

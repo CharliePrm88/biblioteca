@@ -2,6 +2,9 @@ package entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -25,10 +28,12 @@ public class Dipendenti implements Serializable {
 
 	//bi-directional many-to-one association to Registrolibri
 	@OneToMany(mappedBy="dipendenti")
+	@JsonIgnore
 	private List<Registrolibri> registrolibris;
 
 	//bi-directional many-to-one association to Turni
 	@OneToMany(mappedBy="dipendenti")
+	@JsonIgnore
 	private List<Turni> turnis;
 
 	public Dipendenti() {

@@ -3,7 +3,9 @@ package ctrRest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,17 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 import service.ClientiService;
 import entity.Clienti;
 @RestController
+@CrossOrigin
 public class ClienteSpringRest {
 	
 	@Autowired
 	private ClientiService cs;
 
 
-	@RequestMapping(value = "/BibliotecaRest/Cliente/Lista", method = RequestMethod.GET, produces = "application/json")
-	public List<Clienti> ListaClienti(ModelMap model) {
+	@RequestMapping(value = "/BibliotecaRest/Cliente/Lista", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Clienti> ListaClienti() {
 		List<Clienti> l1 = cs.ritornaListaClienti();
 		return l1;
-
 	}
 	
 	@RequestMapping(value = "/BibliotecaRest/Cliente/Ritorna", method = RequestMethod.GET, produces = "application/json")
@@ -32,10 +34,9 @@ public class ClienteSpringRest {
 		return Cliente;
 	}
 	
-	@RequestMapping(value = "/BibliotecaRest/Cliente/Inserisci", method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(value = "/BibliotecaRest/Cliente/Inserisci", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public void inserisciClienti(String nome, String cognome, String codiceFiscale) {
-		Clienti c = new Clienti(codiceFiscale,nome,cognome);
+	public void inserisciClienti(@RequestBody Clienti c) {
 		cs.inserisciClienti(c);
 	}
 	
@@ -45,9 +46,9 @@ public class ClienteSpringRest {
 	}
 	
 	@RequestMapping(value = "/BibliotecaRest/Cliente/Modifica", method = RequestMethod.PUT, consumes = "application/json")
-	public void modificaCliente(@RequestParam(value="idCliente") int matricola, @RequestParam(value="nome") String nome, @RequestParam(value="cognome") String cognome, @RequestParam(value="codiceFiscale") String codiceFiscale) {
-		Clienti Cliente = new Clienti(matricola,nome,cognome,codiceFiscale);
-		cs.aggiornaClienti(Cliente);
+	@ResponseBody
+	public void modificaCliente(@RequestBody Clienti c) {
+		cs.aggiornaClienti(c);
 	}
 
 }

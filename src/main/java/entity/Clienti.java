@@ -3,6 +3,9 @@ package entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.persistence.Entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -26,20 +29,19 @@ public class Clienti implements Serializable {
 
 	//bi-directional many-to-one association to Registrolibri
 	@OneToMany(mappedBy="clienti")
+	@JsonIgnore
 	private List<Registrolibri> registrolibris;
 
 	public Clienti() {
 	}
 
 	public Clienti(String codiceFiscale, String cognome, String nome) {
-		super();
 		this.codiceFiscale = codiceFiscale;
 		this.cognome = cognome;
 		this.nome = nome;
 	}
 	
 	public Clienti(int idCliente, String codiceFiscale, String cognome, String nome) {
-		super();
 		this.idCliente = idCliente;
 		this.codiceFiscale = codiceFiscale;
 		this.cognome = cognome;
